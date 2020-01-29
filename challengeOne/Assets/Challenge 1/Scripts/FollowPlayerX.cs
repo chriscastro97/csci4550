@@ -11,6 +11,7 @@ public class FollowPlayerX : MonoBehaviour
     void Start()
     {
 
+        offset = plane.transform.position + (Vector3.right * 20);
     }
 
     // Update is called once per frame
