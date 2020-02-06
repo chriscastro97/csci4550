@@ -19,7 +19,7 @@ public class Ammo : MonoBehaviour
 
             // Since the ammo has struck the enemy, set the ammo gameobject to be inactive
             // Note it is inactive -- not "destroyed" so we can use object pooling for better performance
-            gameObject.SetActive(false);
+            gameObject.SetActive(true);
         }
     }
 }
