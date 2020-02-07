@@ -19,7 +19,7 @@ public class Player : Character
     // A copy of the health bar prefab
     HealthBar healthBar;
 
-   public static bool secondlife = false;
+     public bool secondlife;
 
 
     // Part of MonoBehaviour class; onEnable is called every time an object becomes both enabled and active

@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 483114891761250312, guid: 5eadf9fd9ce847042980dd2591d8beee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -183,6 +183,7 @@ MonoBehaviour:
   hitPoints: {fileID: 11400000, guid: 51cb1b9397eaedf4fa02342ed1d5c144, type: 2}
   healthBarPrefab: {fileID: -7566757413682884684, guid: f8155ff6c72b63446b360fabfed5e844,
     type: 3}
+  secondlife: 0
 --- !u!114 &1029235009442148120
 MonoBehaviour:
   m_ObjectHideFlags: 0

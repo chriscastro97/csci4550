@@ -12,24 +12,26 @@ public class fakegoal : MonoBehaviour
     
     public GameObject textdisplay;
     public GameObject badtextdisplay;
+    public GameObject goal;
 
     public AudioSource audio;
     public AudioClip clip1;
 
+   public  Player player;
    
-
-
-    private static bool secLife;
+   bool self = false;
 
     // Start is called before the first frame update
     void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
-        
-        secLife = Player.secondlife;
+         
 
+        player.GetComponent<Player>(); 
+        
+        bool self = false; 
         audio = GetComponent<AudioSource>();
-        audio.clip = clip1;
+        audio.clip = clip1; 
         
 
     }
@@ -45,49 +47,42 @@ public class fakegoal : MonoBehaviour
 
     }
 
+  
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (secLife == false)
-        {
+      
+        
+        
 
             if (collision.gameObject.CompareTag("Player"))
             {
+              
 
-                textdisplay.SetActive(true);
-                Player.secondlife = true;
-                secLife = Player.secondlife;
-                StartCoroutine(wait());
+               StartCoroutine(waitDeath());
+           
+      
+        
 
-            } 
 
-        }
-
-        if (secLife == true)
-        {
-            badtextdisplay.SetActive(true);
-            
-        }
     }
 
 
-    IEnumerator wait ()
-    {
+
+    }
+
+    IEnumerator waitDeath()
+    {           
+        boxCollider.enabled = false;
+
+        yield return new WaitForSeconds(3);
+      
+      
+        badtextdisplay.SetActive(true);
+        audio.PlayOneShot(clip1);
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("Lose"); 
         
-        if (secLife == true)
-        {
-            yield return new WaitForSeconds(5);
-            textdisplay.SetActive(false);
-        }
 
-        if (secLife == false)
-        {
-            badtextdisplay.SetActive(true);
-            audio.PlayOneShot(clip1);
-            yield return new WaitForSeconds(5);
-
-            SceneManager.LoadScene("Lose");
-
-        }
     }
 
 
