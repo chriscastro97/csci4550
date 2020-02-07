@@ -74,7 +74,7 @@ public class fakegoal : MonoBehaviour
     {           
         boxCollider.enabled = false;
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
       
       
         badtextdisplay.SetActive(true);
