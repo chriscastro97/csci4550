@@ -17,8 +17,8 @@ public class SpawnManager : MonoBehaviour
     private float roosterSpawnRangeZ = 15;    
 
     //Timing variables
-    private float startDelay = 2;
-    private float spawnInterval = 1.5f;
+    //private float startDelay = 2;
+    //private float spawnInterval = 1.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -164,11 +164,11 @@ public class SpawnManager : MonoBehaviour
     void SpawnMooseRight()
     {
         //Fix rotation of Moose
-        Quaternion mooseRotation = FixRotation("right");
+        Quaternion mooseRotationRight = FixRotation("right");
         //Create spawn location
         Vector3 spawnPos = new Vector3(17, 0, UnityEngine.Random.Range(-2, 17));
         //Spawn Moose
-        Instantiate(animalPrefabs[0], spawnPos, mooseRotation);
+        Instantiate(animalPrefabs[0], spawnPos, mooseRotationRight);
     }
 
     void SpawnFoxTL()
@@ -198,7 +198,7 @@ public class SpawnManager : MonoBehaviour
         else if(dir == "right")
         {
             //West facing Quaternion
-            return new Quaternion(0, 270, 0, 1);
+            return new Quaternion(0, -270, 0, 1);
         }
 
         else if(dir == "left")

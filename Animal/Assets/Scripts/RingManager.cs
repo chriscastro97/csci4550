@@ -6,17 +6,23 @@ public class RingManager : MonoBehaviour
 {
     public bool gameOver;
     public bool gameStart;
+    public GameObject ring;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Start with the radius here and a way to know when player steps inside
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         //Shrink the ring overtime
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ShrinkRing();
+            Debug.Log("Shrink the ring");
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -38,7 +44,21 @@ public class RingManager : MonoBehaviour
         }
     }
 
+    private void ShrinkRing()
+    {
+        //Get the current radius of the ring
+        float newScaleX = ring.transform.localScale.x;
+        float newScaleZ = ring.transform.localScale.z;
 
+        //Change the radius values
+        newScaleX = 10;
+        newScaleZ = 10;
 
+        //Set the new radius values
+        ring.transform.localScale.Set(newScaleX, ring.transform.localScale.y, newScaleZ);
+
+        //Not working
+
+    }
 
 }

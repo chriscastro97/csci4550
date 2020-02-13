@@ -687,6 +687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOver: 0
   gameStart: 0
+  ring: {fileID: 1428802766}
 --- !u!1 &1590138454
 GameObject:
   m_ObjectHideFlags: 0
