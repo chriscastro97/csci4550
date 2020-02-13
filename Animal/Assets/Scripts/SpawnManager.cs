@@ -31,6 +31,7 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Working
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Spawn a small wall of roosters from the Left side of the screen
@@ -38,6 +39,21 @@ public class SpawnManager : MonoBehaviour
             SpawnRoosterWallRight(roostersInWall);
             SpawnRoosterWallBottom(roostersInWall);
             SpawnRoosterWallTop(roostersInWall);
+
+            SpawnMooseTop();
+            SpawnMooseBottom();
+
+
+        }
+
+        //Debugging
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SpawnMooseLeft();
+            SpawnMooseRight();
+
+            SpawnFoxTL();            
+            
         }
     }
 
@@ -115,6 +131,56 @@ public class SpawnManager : MonoBehaviour
 
     }
 
+    void SpawnMooseTop()
+    {
+        //Fix rotation of Moose
+        Quaternion mooseRotation = FixRotation("top");
+        //Create spawn location
+        Vector3 spawnPos = new Vector3(UnityEngine.Random.Range(-roosterSpawnRangeZ, roosterSpawnRangeZ), 0, 20);
+        //Spawn Moose
+        Instantiate(animalPrefabs[0], spawnPos, mooseRotation);
+    }
+
+    void SpawnMooseBottom()
+    {
+        //Fix rotation of Moose
+        Quaternion mooseRotation = FixRotation("bottom");
+        //Create spawn location
+        Vector3 spawnPos = new Vector3(UnityEngine.Random.Range(-roosterSpawnRangeZ, roosterSpawnRangeZ), 0, -5);
+        //Spawn Moose
+        Instantiate(animalPrefabs[0], spawnPos, mooseRotation);
+    }
+
+    void SpawnMooseLeft()
+    {
+        //Fix rotation of Moose
+        Quaternion mooseRotation = FixRotation("left");
+        //Create spawn location
+        Vector3 spawnPos = new Vector3(-19, 0, UnityEngine.Random.Range(-roosterSpawnRangeZ, roosterSpawnRangeZ));
+        //Spawn Moose
+        Instantiate(animalPrefabs[0], spawnPos, mooseRotation);
+    }
+
+    void SpawnMooseRight()
+    {
+        //Fix rotation of Moose
+        Quaternion mooseRotation = FixRotation("right");
+        //Create spawn location
+        Vector3 spawnPos = new Vector3(17, 0, UnityEngine.Random.Range(-2, 17));
+        //Spawn Moose
+        Instantiate(animalPrefabs[0], spawnPos, mooseRotation);
+    }
+
+    void SpawnFoxTL()
+    {
+        //Fix rotation of Fox
+        Quaternion foxRotation = FixRotation("tlcorner");
+        //Create spawn location, pick fox corner
+        Vector3 spawnPos = new Vector3(-8, 0, 18);
+        //Spawn Fox
+        Instantiate(animalPrefabs[1], spawnPos, foxRotation);
+    }
+
     private static Quaternion FixRotation(string dir)
     {
         if(dir == "top")
@@ -141,8 +207,32 @@ public class SpawnManager : MonoBehaviour
             return new Quaternion(0, 90, 0, 1);
         }
 
+        else if(dir == "brcorner")
+        {
+            //Top left corner facing Quaternion
+            return new Quaternion(0, -45, 0, 1);
+        }
+
+        else if (dir == "blcorner")
+        {
+            //Top right corner facing Quaternion
+            return new Quaternion(0, 45, 0, 1);
+        }
+
+        else if (dir == "trcorner")
+        {
+            //Bottom left corner facing Quaternion
+            return new Quaternion(0, -145, 0, 1);
+        }
+
+        else if (dir == "tlcorner")
+        {
+            //Bottom right corner facing Quaternion
+            return new Quaternion(0, 145, 0, 0);
+        }
+
         //Default
-        return new Quaternion(0, 0, 0, 0);
+        return new Quaternion(0, 270, 0, 0);
     }
 
 }
