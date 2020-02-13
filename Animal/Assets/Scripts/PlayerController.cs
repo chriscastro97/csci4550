@@ -11,12 +11,10 @@ public class PlayerController : MonoBehaviour
     public float zRange = 20.0f;
     public GameObject projectilePrefab;
     private Animator playerAnimator;
-    public bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Set the playerAnimator object
         playerAnimator = GameObject.Find("Player").GetComponent<Animator>();
     }
 
@@ -31,7 +29,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
         transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
 
-        //Limiting player movement to visible screen
+        //Limiting player movement
         if(transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
@@ -53,12 +51,12 @@ public class PlayerController : MonoBehaviour
         //Player attack controls
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            //Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
 
             //TODO fix fish throwing
         }
 
-        //TODO Add animation condition
+        //TODO Add animation conditions
         //TODO Add player rotation based on direction
     }
 }
