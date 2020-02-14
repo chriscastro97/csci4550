@@ -14,11 +14,14 @@ public class SpawnManager : MonoBehaviour
     public int roostersInWall = 4;
 
     //Rooster spawn conditions
-    private float roosterSpawnRangeZ = 15;    
+    private float roosterSpawnRangeZ = 15;
 
     //Timing variables
     //private float startDelay = 2;
     //private float spawnInterval = 1.5f;
+
+    public RingManager ringManager;
+    public bool gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -26,17 +29,20 @@ public class SpawnManager : MonoBehaviour
         //Using the startDelay and spawnInterval variables, we limit the first time
         //An animalis spawned and an interval for the "SpawnRandomAnimal" method
         //InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
+        ringManager = GameObject.Find("Ring").GetComponent<RingManager>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        gameOver = ringManager.gameOver;
+
         //Working
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !gameOver)
         {
             //Spawn a small wall of roosters from the Left side of the screen
             SpawnRoosterWallLeft(roostersInWall);
-            SpawnRoosterWallRight(roostersInWall);
             SpawnRoosterWallBottom(roostersInWall);
             SpawnRoosterWallTop(roostersInWall);
 
@@ -49,10 +55,12 @@ public class SpawnManager : MonoBehaviour
         //Debugging
         if (Input.GetKeyDown(KeyCode.E))
         {
-            SpawnMooseLeft();
-            SpawnMooseRight();
+            //SpawnMooseLeft();
+            //SpawnMooseRight();
 
-            SpawnFoxTL();            
+            SpawnRoosterWallRight(roostersInWall);
+
+            ///SpawnFoxTL();            
             
         }
     }
@@ -78,7 +86,9 @@ public class SpawnManager : MonoBehaviour
             //Create spawn location
             Vector3 spawnPos = new Vector3(-19, 0, UnityEngine.Random.Range(-roosterSpawnRangeZ, roosterSpawnRangeZ));
             //Spawn Rooster
-            Instantiate(animalPrefabs[2], spawnPos, animalPrefabs[2].gameObject.transform.rotation);
+            Instantiate(animalPrefabs[2], spawnPos, 
+                //working because default facing direction
+                animalPrefabs[2].gameObject.transform.rotation);
         }
         
     }
@@ -197,8 +207,11 @@ public class SpawnManager : MonoBehaviour
 
         else if(dir == "right")
         {
+            Debug.Log("Spawn, right side");
             //West facing Quaternion
-            return new Quaternion(0, -270, 0, 1);
+            Quaternion facingLeft = new Quaternion(0, -270, 0, 1);
+            Debug.Log(facingLeft.y);
+            return facingLeft;
         }
 
         else if(dir == "left")

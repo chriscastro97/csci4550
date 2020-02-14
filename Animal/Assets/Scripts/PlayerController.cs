@@ -12,22 +12,36 @@ public class PlayerController : MonoBehaviour
     public GameObject projectilePrefab;
     private Animator playerAnimator;
 
+    public bool gameOver;
+    public RingManager ringManager;
+
     // Start is called before the first frame update
     void Start()
     {
         playerAnimator = GameObject.Find("Player").GetComponent<Animator>();
+
+        //Refrence to SpawnManager script in the empty SpawnManager game object
+        ringManager = GameObject.Find("Ring").GetComponent<RingManager>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Tracking game status
+        gameOver = ringManager.gameOver;
+        
         //Getting player input
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        //Using player input
-        transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
-        transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
+        if (!gameOver)
+        {
+            //Using player input
+            transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
+            transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
+        }
+        
 
         //Limiting player movement
         if(transform.position.x < -xRange)

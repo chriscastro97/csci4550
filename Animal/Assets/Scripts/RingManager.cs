@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class RingManager : MonoBehaviour
 {
-    public bool gameStart;
-    public bool gameOver;
+    public bool gameStart = false;
+    public bool gameOver = false;
 
     //Testing, balancing still needed
     public float minRadius; //Recommend 3
     public float shrinkFactor; //Recommend 0.5
-    public float waitTime; //Recommend 30 seconds
+    public float waitTime; //Recommend 15 seconds
+    MeshCollider meshCollider;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        //only here for testing, triggered onCollisionEnter with player
-        StartCoroutine(ShrinkRing());
+        meshCollider = GetComponent<MeshCollider>();
     }
 
     // Update is called once per frame
@@ -39,11 +40,10 @@ public class RingManager : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")//not working
+        if (collision.gameObject.tag == "Player")
         {
             gameStart = false;
             gameOver = true;
-
             StopCoroutine(ShrinkRing());
             //end animal spawns,animations, movement, timer
             
@@ -52,13 +52,13 @@ public class RingManager : MonoBehaviour
 
     IEnumerator ShrinkRing()
     {
-        while (true) // testing, use gameStart/!gameOver 
+        while (gameStart && !gameOver) // testing, use gameStart/!gameOver 
         {
             //Wait a specified amount of time before shrinking ring.
             yield return new WaitForSeconds(waitTime);
 
             // scaling all axis' evenly except y, which remains 0 
-            while (transform.localScale.x > minRadius)
+            while (transform.localScale.x > minRadius && !gameOver)
             {
                 transform.localScale -= new Vector3(1, 0, 1) * Time.deltaTime * shrinkFactor;
                 yield return null;
