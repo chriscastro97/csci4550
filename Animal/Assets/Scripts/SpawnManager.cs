@@ -17,9 +17,10 @@ public class SpawnManager : MonoBehaviour
     private float roosterSpawnRangeZ = 15;
 
     //Timing variables
-    //private float startDelay = 2;
-    //private float spawnInterval = 1.5f;
+    public float startDelay;
+    public float spawnInterval;
 
+    //Ring variables
     public RingManager ringManager;
     public bool gameOver;
     public bool gameStart;
@@ -40,28 +41,30 @@ public class SpawnManager : MonoBehaviour
 
         if(gameStart && !gameOver)
         {
-            InvokeRepeating("SpawnRoosterWallBottom", 2, 2);
+            //spawn delay not working
+            //InvokeRepeating("SpawnFoxTL", startDelay, 10.0f);
         }
 
-        //Working
+        //Working spawn methods
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Spawn a small wall of roosters from the Left side of the screen
+            //Spawn a small wall of roosters from a specified side of the screen
             SpawnRoosterWallLeft(roostersInWall);
             SpawnRoosterWallBottom(roostersInWall);
             SpawnRoosterWallTop(roostersInWall);
             SpawnRoosterWallRight(roostersInWall);
 
+            //Spawn a single moose from a specified side of the screen
             SpawnMooseTop();
             SpawnMooseBottom();
             SpawnMooseRight();
             SpawnMooseLeft();
 
+            //Spawn a single fox to run through the circle from the corners
             SpawnFoxTL();
             SpawnFoxTR();
             SpawnFoxBR();
             SpawnFoxBL();
-
         }
 
         //Debugging
@@ -78,7 +81,6 @@ public class SpawnManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(UnityEngine.Random.Range(-spawnRangeX, spawnRangeX), spawnRangeY, UnityEngine.Random.Range(-spawnRangeZ, spawnRangeZ));
         Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
 
-        //TODO Change spawn function to spawn a 'wave' of enemies not just one
     }
 
     void SpawnRoosterWallLeft(int numOfRoosters)

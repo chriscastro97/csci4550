@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Input variables
     private float horizontalInput;
     private float verticalInput;
+
+    //Speed and limiting varialbes
     public float speed = 10.0f;
     private float xRange = 20.0f;
     private float negZRange = -4.0f;
     private float posZRange = 20.0f;
+
+    //Refrences
     public GameObject projectilePrefab;
     private Animator playerAnimator;
-
     public bool gameOver;
     public RingManager ringManager;
 
@@ -66,12 +70,10 @@ public class PlayerController : MonoBehaviour
         //Player attack controls
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
 
             //TODO fix fish throwing
         }
 
-        //TODO Add animation conditions
-        //TODO Add player rotation based on direction
     }
 }

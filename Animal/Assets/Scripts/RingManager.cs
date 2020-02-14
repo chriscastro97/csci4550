@@ -10,15 +10,18 @@ public class RingManager : MonoBehaviour
     //Testing, balancing still needed
     public float minRadius; //Recommend 3
     public float shrinkFactor; //Recommend 0.5
-    public float waitTime; //Recommend 15 seconds
+    public float waitTime; //Recommend 10 seconds
     MeshCollider meshCollider;
 
     //Timing variables
     private float startDelay = 2;
     private float spawnInterval = 1.5f;
 
+    //Timer variables
     public GameObject timer;
-    public TimerController timerController;
+
+    //Objective variables
+    public GameObject objectiveText;
 
     private SpawnManager spawnManager;
 
@@ -26,7 +29,6 @@ public class RingManager : MonoBehaviour
     void Start()
     {
         //Get refs
-        timerController = timer.GetComponent<TimerController>();
         meshCollider = GetComponent<MeshCollider>();
         spawnManager = GetComponent<SpawnManager>();
         
@@ -35,17 +37,21 @@ public class RingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-   
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            gameStart = true;
-            timer.gameObject.SetActive(true); 
-
             //start shrinking ring, timer, animals spawns
+            gameStart = true;
+            timer.gameObject.SetActive(true);
+            StartCoroutine(ShrinkRing());
+
+            //Hide objective text
+            objectiveText.gameObject.SetActive(false);
+            
 
         }
     }
@@ -54,11 +60,11 @@ public class RingManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            //end the game
             gameStart = false;
             gameOver = true;
             StopCoroutine(ShrinkRing());
-            //end animal spawns,animations, movement, timer
-            
+
         }
     }
 
