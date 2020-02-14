@@ -45,9 +45,12 @@ public class SpawnManager : MonoBehaviour
             SpawnRoosterWallLeft(roostersInWall);
             SpawnRoosterWallBottom(roostersInWall);
             SpawnRoosterWallTop(roostersInWall);
+            SpawnRoosterWallRight(roostersInWall);
 
             SpawnMooseTop();
             SpawnMooseBottom();
+            SpawnMooseRight();
+            SpawnMooseLeft();
 
 
         }
@@ -55,12 +58,10 @@ public class SpawnManager : MonoBehaviour
         //Debugging
         if (Input.GetKeyDown(KeyCode.E))
         {
-            //SpawnMooseLeft();
-            //SpawnMooseRight();
-
-            SpawnRoosterWallRight(roostersInWall);
-
-            ///SpawnFoxTL();            
+            SpawnFoxTL();
+            SpawnFoxTR();
+            SpawnFoxBR();
+            SpawnFoxBL();
             
         }
     }
@@ -191,57 +192,85 @@ public class SpawnManager : MonoBehaviour
         Instantiate(animalPrefabs[1], spawnPos, foxRotation);
     }
 
+    void SpawnFoxTR()
+    {
+        //Fix rotation of Fox
+        Quaternion foxRotation = FixRotation("trcorner");
+        //Create spawn location, pick fox corner
+        Vector3 spawnPos = new Vector3(8, 0, 18);
+        //Spawn Fox
+        Instantiate(animalPrefabs[1], spawnPos, foxRotation);
+    }
+
+    void SpawnFoxBR()
+    {
+        //Fix rotation of Fox
+        Quaternion foxRotation = FixRotation("brcorner");
+        //Create spawn location, pick fox corner
+        Vector3 spawnPos = new Vector3(9, 0, -6);
+        //Spawn Fox
+        Instantiate(animalPrefabs[1], spawnPos, foxRotation);
+    }
+
+    void SpawnFoxBL()
+    {
+        //Fix rotation of Fox
+        Quaternion foxRotation = FixRotation("blcorner");
+        //Create spawn location, pick fox corner
+        Vector3 spawnPos = new Vector3(-9, 0, -6);
+        //Spawn Fox
+        Instantiate(animalPrefabs[1], spawnPos, foxRotation);
+    }
+
     private static Quaternion FixRotation(string dir)
     {
         if(dir == "top")
         {
-            //South facing Quaternion
-            return new Quaternion(0, 180, 0, 1);
+            //South facing Quaternion Euler
+            return Quaternion.Euler(0, 180, 0);
         }
 
         else if(dir == "bottom")
         {
-            //North facing Quaternion
-            return new Quaternion(0, 0, 0, 1);
+            //North facing Quaternion Euler
+            return Quaternion.Euler(0, 0, 0);
         }
 
         else if(dir == "right")
         {
-            Debug.Log("Spawn, right side");
-            //West facing Quaternion
-            Quaternion facingLeft = new Quaternion(0, -270, 0, 1);
-            Debug.Log(facingLeft.y);
-            return facingLeft;
+            //West facing Quaternion Euler
+            return Quaternion.Euler(0, 270, 0);
         }
 
         else if(dir == "left")
         {
-            //East facing Quaternion
-            return new Quaternion(0, 90, 0, 1);
+            //East facing Quaternion Euler
+            return Quaternion.Euler(0, -270, 0);
         }
 
         else if(dir == "brcorner")
         {
-            //Top left corner facing Quaternion
-            return new Quaternion(0, -45, 0, 1);
+            //Top left facing Quaternion Euler
+            return Quaternion.Euler(0, -45, 0);
         }
 
         else if (dir == "blcorner")
         {
-            //Top right corner facing Quaternion
-            return new Quaternion(0, 45, 0, 1);
+            //Top right facing Quaternion Euler
+            Quaternion facingLeft = Quaternion.Euler(0, 45, 0);
+            return facingLeft;
         }
 
         else if (dir == "trcorner")
         {
-            //Bottom left corner facing Quaternion
-            return new Quaternion(0, -145, 0, 1);
+            //Bottom left facing Quaternion Euler
+            return Quaternion.Euler(0, -145, 0);
         }
 
         else if (dir == "tlcorner")
         {
-            //Bottom right corner facing Quaternion
-            return new Quaternion(0, 145, 0, 0);
+            //Bottom right facing Quaternion Euler
+            return Quaternion.Euler(0, 145, 0);
         }
 
         //Default

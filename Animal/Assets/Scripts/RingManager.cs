@@ -13,10 +13,14 @@ public class RingManager : MonoBehaviour
     public float waitTime; //Recommend 15 seconds
     MeshCollider meshCollider;
 
+    public GameObject timer;
+    public TimerController timerController;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        timerController = timer.GetComponent<TimerController>();
         meshCollider = GetComponent<MeshCollider>();
     }
 
@@ -31,6 +35,7 @@ public class RingManager : MonoBehaviour
         if(collision.gameObject.tag == "Player")//not working
         {
             gameStart = true;
+            timer.gameObject.SetActive(true); 
 
             //start shrinking ring, timer, animals spawns
             StartCoroutine(ShrinkRing());
