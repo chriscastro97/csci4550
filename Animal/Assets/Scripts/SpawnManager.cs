@@ -22,13 +22,12 @@ public class SpawnManager : MonoBehaviour
 
     public RingManager ringManager;
     public bool gameOver;
+    public bool gameStart;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Using the startDelay and spawnInterval variables, we limit the first time
-        //An animalis spawned and an interval for the "SpawnRandomAnimal" method
-        //InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
+        //Get refs
         ringManager = GameObject.Find("Ring").GetComponent<RingManager>();
         
     }
@@ -37,9 +36,15 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         gameOver = ringManager.gameOver;
+        gameStart = ringManager.gameStart;
+
+        if(gameStart && !gameOver)
+        {
+            InvokeRepeating("SpawnRoosterWallBottom", 2, 2);
+        }
 
         //Working
-        if (Input.GetKeyDown(KeyCode.Space) && !gameOver)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             //Spawn a small wall of roosters from the Left side of the screen
             SpawnRoosterWallLeft(roostersInWall);
@@ -52,16 +57,16 @@ public class SpawnManager : MonoBehaviour
             SpawnMooseRight();
             SpawnMooseLeft();
 
+            SpawnFoxTL();
+            SpawnFoxTR();
+            SpawnFoxBR();
+            SpawnFoxBL();
 
         }
 
         //Debugging
         if (Input.GetKeyDown(KeyCode.E))
         {
-            SpawnFoxTL();
-            SpawnFoxTR();
-            SpawnFoxBR();
-            SpawnFoxBL();
             
         }
     }
@@ -178,6 +183,7 @@ public class SpawnManager : MonoBehaviour
         Quaternion mooseRotationRight = FixRotation("right");
         //Create spawn location
         Vector3 spawnPos = new Vector3(17, 0, UnityEngine.Random.Range(-2, 17));
+
         //Spawn Moose
         Instantiate(animalPrefabs[0], spawnPos, mooseRotationRight);
     }

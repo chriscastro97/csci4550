@@ -13,15 +13,23 @@ public class RingManager : MonoBehaviour
     public float waitTime; //Recommend 15 seconds
     MeshCollider meshCollider;
 
+    //Timing variables
+    private float startDelay = 2;
+    private float spawnInterval = 1.5f;
+
     public GameObject timer;
     public TimerController timerController;
 
+    private SpawnManager spawnManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Get refs
         timerController = timer.GetComponent<TimerController>();
         meshCollider = GetComponent<MeshCollider>();
+        spawnManager = GetComponent<SpawnManager>();
+        
     }
 
     // Update is called once per frame
@@ -32,14 +40,13 @@ public class RingManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player")//not working
+        if(collision.gameObject.tag == "Player")
         {
             gameStart = true;
             timer.gameObject.SetActive(true); 
 
             //start shrinking ring, timer, animals spawns
-            StartCoroutine(ShrinkRing());
-            
+
         }
     }
 
