@@ -4,61 +4,67 @@ using UnityEngine;
 
 public class RingManager : MonoBehaviour
 {
-    public bool gameOver;
     public bool gameStart;
-    public GameObject ring;
+    public bool gameOver;
+
+    //Testing, balancing still needed
+    public float minRadius; //Recommend 3
+    public float shrinkFactor; //Recommend 0.5
+    public float waitTime; //Recommend 30 seconds
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //only here for testing, triggered onCollisionEnter with player
+        StartCoroutine(ShrinkRing());
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Shrink the ring overtime
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ShrinkRing();
-            Debug.Log("Shrink the ring");
-        }
+   
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player")//not working
         {
             gameStart = true;
-            //start timer, animals spawns
+
+            //start shrinking ring, timer, animals spawns
+            StartCoroutine(ShrinkRing());
+            
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")//not working
         {
             gameStart = false;
             gameOver = true;
+
+            StopCoroutine(ShrinkRing());
             //end animal spawns,animations, movement, timer
+            
         }
     }
 
-    private void ShrinkRing()
+    IEnumerator ShrinkRing()
     {
-        //Get the current radius of the ring
-        float newScaleX = ring.transform.localScale.x;
-        float newScaleZ = ring.transform.localScale.z;
+        while (true) // testing, use gameStart/!gameOver 
+        {
+            //Wait a specified amount of time before shrinking ring.
+            yield return new WaitForSeconds(waitTime);
 
-        //Change the radius values
-        newScaleX = 10;
-        newScaleZ = 10;
+            // scaling all axis' evenly except y, which remains 0 
+            while (transform.localScale.x > minRadius)
+            {
+                transform.localScale -= new Vector3(1, 0, 1) * Time.deltaTime * shrinkFactor;
+                yield return null;
+            }
 
-        //Set the new radius values
-        ring.transform.localScale.Set(newScaleX, ring.transform.localScale.y, newScaleZ);
-
-        //Not working
-
+        }
     }
 
 }
