@@ -19,6 +19,7 @@ public class RingManager : MonoBehaviour
 
     //Timer variables
     public GameObject timer;
+    public GameObject spawner;
 
     //Objective variables
     public GameObject objectiveText;
@@ -52,6 +53,7 @@ public class RingManager : MonoBehaviour
             //start shrinking ring, timer, animals spawns
             gameStart = true;
             timer.gameObject.SetActive(true);
+            spawner.SetActive(true);
             StartCoroutine(ShrinkRing());
 
             //Hide objective text
