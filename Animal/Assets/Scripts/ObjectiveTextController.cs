@@ -6,19 +6,21 @@ using UnityEngine.UI;
 public class ObjectiveTextController : MonoBehaviour
 {
     //Refrences
-    private string objectiveText;
-    [SerializeField] Text objectiveTextField;
+    private string objectiveTextString;
+    [SerializeField] Text objectiveText;
     private RingManager ringManager;
+    private TimerController timerController;
 
     // Start is called before the first frame update
     void Start()
     {
         //Get ringManager
         ringManager = GameObject.Find("Ring").GetComponent<RingManager>();
+        //timerController = GameObject.Find("Timer").GetComponent<TimerController>();
 
         //Set the objective text
-        objectiveText = "Step into the Ring to begin the game.";
-        objectiveTextField.text = objectiveText;
+        objectiveTextString = "Step into the Ring to begin the game.";
+        objectiveText.text = objectiveTextString;
 
                 
     }
@@ -26,7 +28,13 @@ public class ObjectiveTextController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         
+
+        if (ringManager.gameStart)
+        {
+            //Not working
+            //Change the objective text to the score when the game starts
+            //objectiveText.text = "Score: " + timerController.currentTime;
+        }
 
     }
 }

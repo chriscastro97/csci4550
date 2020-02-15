@@ -12,8 +12,6 @@ public class SpawnManager : MonoBehaviour
     private float spawnRangeZ = 20;
     private float spawnRangeY = 0;
     public int roostersInWall = 4;
-
-    //Rooster spawn conditions
     private float roosterSpawnRangeZ = 15;
 
     //Timing variables
@@ -25,17 +23,22 @@ public class SpawnManager : MonoBehaviour
     public bool gameOver;
     public bool gameStart;
 
+    //Refrences
+    private TimerController timercontroller;
+
     // Start is called before the first frame update
     void Start()
     {
-        //Get refs
+        //Get refs for game start/end, and time.
         ringManager = GameObject.Find("Ring").GetComponent<RingManager>();
+        //timercontroller = GameObject.Find("Timer").GetComponent<TimerController>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Live variables
         gameOver = ringManager.gameOver;
         gameStart = ringManager.gameStart;
 
@@ -70,17 +73,13 @@ public class SpawnManager : MonoBehaviour
         //Debugging
         if (Input.GetKeyDown(KeyCode.E))
         {
-            
+            SpawnRandomAnimal();
         }
     }
 
     void SpawnRandomAnimal()
     {
-        //Spawn a randomly generated animal using a random number and the animal array
-        int animalIndex = UnityEngine.Random.Range(0, animalPrefabs.Length);
-        Vector3 spawnPos = new Vector3(UnityEngine.Random.Range(-spawnRangeX, spawnRangeX), spawnRangeY, UnityEngine.Random.Range(-spawnRangeZ, spawnRangeZ));
-        Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
-
+        
     }
 
     void SpawnRoosterWallLeft(int numOfRoosters)

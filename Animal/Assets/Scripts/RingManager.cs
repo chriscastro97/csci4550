@@ -11,7 +11,7 @@ public class RingManager : MonoBehaviour
     public float minRadius; //Recommend 3
     public float shrinkFactor; //Recommend 0.5
     public float waitTime; //Recommend 10 seconds
-    MeshCollider meshCollider;
+    
 
     //Timing variables
     private float startDelay = 2;
@@ -23,7 +23,9 @@ public class RingManager : MonoBehaviour
     //Objective variables
     public GameObject objectiveText;
 
+    //Refrences
     private SpawnManager spawnManager;
+    MeshCollider meshCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,10 @@ public class RingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -51,8 +56,6 @@ public class RingManager : MonoBehaviour
 
             //Hide objective text
             objectiveText.gameObject.SetActive(false);
-            
-
         }
     }
 
@@ -64,6 +67,9 @@ public class RingManager : MonoBehaviour
             gameStart = false;
             gameOver = true;
             StopCoroutine(ShrinkRing());
+            
+            //Show the objectiveText which now holds the score
+            //objectiveText.gameObject.SetActive(true);
 
         }
     }
