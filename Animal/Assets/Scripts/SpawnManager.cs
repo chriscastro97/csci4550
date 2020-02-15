@@ -15,8 +15,8 @@ public class SpawnManager : MonoBehaviour
     private float roosterSpawnRangeZ = 15;
 
     //Timing variables
-    public float startDelay;
-    public float spawnInterval;
+    public float spawnTime = 1;
+    public float spawnDelay = 1.5F;
 
     //Ring variables
     public RingManager ringManager;
@@ -33,7 +33,13 @@ public class SpawnManager : MonoBehaviour
         ringManager = GameObject.Find("Ring").GetComponent<RingManager>();
         //timercontroller = GameObject.Find("Timer").GetComponent<TimerController>();
         
+        //CHRIS'S CODE
+         InvokeRepeating("SpawnRandomAnimal", spawnDelay, spawnDelay);
+      
     }
+
+
+
 
     // Update is called once per frame
     void Update()
@@ -42,11 +48,10 @@ public class SpawnManager : MonoBehaviour
         gameOver = ringManager.gameOver;
         gameStart = ringManager.gameStart;
 
-        if(gameStart && !gameOver)
-        {
-            //spawn delay not working
-            //InvokeRepeating("SpawnFoxTL", startDelay, 10.0f);
-        }
+    
+
+        /**
+         * DEBUGGING 
 
         //Working spawn methods
         if (Input.GetKeyDown(KeyCode.Space))
@@ -75,11 +80,32 @@ public class SpawnManager : MonoBehaviour
         {
             SpawnRandomAnimal();
         }
+
+    */
     }
 
     void SpawnRandomAnimal()
     {
-        
+            SpawnRoosterWallLeft(roostersInWall);
+            SpawnRoosterWallBottom(roostersInWall);
+            SpawnRoosterWallTop(roostersInWall);
+            SpawnRoosterWallRight(roostersInWall);
+
+            //Spawn a single moose from a specified side of the screen
+            SpawnMooseTop();
+            SpawnMooseBottom();
+            SpawnMooseRight();
+            SpawnMooseLeft();
+
+            //Spawn a single fox to run through the circle from the corners
+            SpawnFoxTL();
+            SpawnFoxTR();
+            SpawnFoxBR();
+            SpawnFoxBL();
+
+        if (gameOver) {
+            CancelInvoke("SpawnRandomAnimal");
+        }
     }
 
     void SpawnRoosterWallLeft(int numOfRoosters)

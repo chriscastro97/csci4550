@@ -1074,6 +1074,7 @@ MonoBehaviour:
   shrinkFactor: 0.5
   waitTime: 0
   timer: {fileID: 902814796}
+  spawner: {fileID: 1751908020}
   objectiveText: {fileID: 936712698}
 --- !u!64 &1428802772
 MeshCollider:
@@ -1240,7 +1241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1751908021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,8 +1259,8 @@ MonoBehaviour:
   - {fileID: 8392996054599753414, guid: 416630d40d29af84e9ab401472e1cb52, type: 3}
   - {fileID: 8890085835172726240, guid: 754bcf40a2dbbac4eab4738784e8bafa, type: 3}
   roostersInWall: 3
-  startDelay: 5
-  spawnInterval: 10
+  spawnTime: 1
+  spawnDelay: 1.5
   ringManager: {fileID: 0}
   gameOver: 0
   gameStart: 0
