@@ -31,7 +31,7 @@ public class TimerController : MonoBehaviour
         if(ringManager.gameStart && !ringManager.gameOver)
         {
             currentTime += 1 * Time.deltaTime;
-            countdownText.text = currentTime.ToString();
+            countdownText.text ="Score: " + currentTime.ToString("F2");
         }
         
 
