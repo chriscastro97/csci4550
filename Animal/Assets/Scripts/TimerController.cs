@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class TimerController : MonoBehaviour
 {
-    float currentTime = 0f;
-    float startingTime = 0f;
+    //Timer Variables
+    public float currentTime = 0f;
+    private float startingTime = 0f;
+    
+    //Refrences
     [SerializeField] Text countdownText;
     private RingManager ringManager;
 
@@ -16,15 +19,21 @@ public class TimerController : MonoBehaviour
         //Reference ringManager script
         ringManager = GameObject.Find("Ring").GetComponent<RingManager>();
 
+        //Start the timer at 0
         currentTime = startingTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!ringManager.gameOver)
-        currentTime += 1 * Time.deltaTime;
-        countdownText.text = currentTime.ToString();
+
+        //If the game is running, start the timer.
+        if(ringManager.gameStart && !ringManager.gameOver)
+        {
+            currentTime += 1 * Time.deltaTime;
+            countdownText.text = currentTime.ToString();
+        }
+        
 
     }
 
