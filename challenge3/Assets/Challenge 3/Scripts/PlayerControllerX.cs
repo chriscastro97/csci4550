@@ -10,12 +10,16 @@ public class PlayerControllerX : MonoBehaviour
     private float gravityModifier = 1.5f;
     private Rigidbody playerRb;
 
+    private bool validY =true;
+
     public ParticleSystem explosionParticle;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        playerRb = GameObject.Find("Player").GetComponent<Rigidbody>(); 
+
         Physics.gravity *= gravityModifier;
 
         // Apply a small upward force at the start of the game
@@ -26,8 +30,19 @@ public class PlayerControllerX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // While space is pressed and player is low enough, float up
-        if (Input.GetKey(KeyCode.Space) && !gameOver)
+        // While space is pressed, the game is not over and player is low enough, float up
+        if (Input.GetKey(KeyCode.Space) && !gameOver && validY)
+        {
+            playerRb.AddForce(Vector3.up * floatForce);
+        }
+
+        if (playerRb.transform.position.y >= 14)
+            validY = false;
+        else
+            validY = true;
+
+        //Fix player being too low if the game is not over
+        if(playerRb.transform.position.y <= 2 && !gameOver)
         {
             playerRb.AddForce(Vector3.up * floatForce);
         }

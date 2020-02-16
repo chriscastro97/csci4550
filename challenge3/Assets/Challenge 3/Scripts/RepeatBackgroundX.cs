@@ -9,8 +9,9 @@ public class RepeatBackgroundX : MonoBehaviour
 
     private void Start()
     {
+        //Get a starting position and calculate the halfway point
         startPos = transform.position;
-        repeatWidth = GetComponent<BoxCollider>().size.y; 
+        repeatWidth = GetComponent<BoxCollider>().size.x / 2; 
     }
 
     private void Update()
