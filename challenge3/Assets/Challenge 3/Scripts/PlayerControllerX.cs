@@ -15,6 +15,10 @@ public class PlayerControllerX : MonoBehaviour
     public ParticleSystem explosionParticle;
     public ParticleSystem fireWork;
 
+
+    AudioSource backgroundaudioSource;
+   
+
     AudioSource audioSource;
     public AudioClip boom;
     public AudioClip blip;
@@ -24,6 +28,7 @@ public class PlayerControllerX : MonoBehaviour
     void Start()
     {
 
+        backgroundaudioSource = Camera.main.GetComponent<AudioSource>();
         audioSource = GetComponent<AudioSource>();
         playerRb = GameObject.Find("Player").GetComponent<Rigidbody>(); 
 
@@ -60,6 +65,7 @@ public class PlayerControllerX : MonoBehaviour
         // if player collides with bomb, explode and set gameOver to true
         if (other.gameObject.CompareTag("Bomb"))
         {
+            backgroundaudioSource.Stop();
             explosionParticle.Play();
             audioSource.PlayOneShot(boom);
             gameOver = true;
