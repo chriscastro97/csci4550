@@ -13,11 +13,18 @@ public class PlayerControllerX : MonoBehaviour
     private bool validY =true;
 
     public ParticleSystem explosionParticle;
+    public ParticleSystem fireWork;
 
+    AudioSource audioSource;
+    public AudioClip boom;
+    public AudioClip blip;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+
+        audioSource = GetComponent<AudioSource>();
         playerRb = GameObject.Find("Player").GetComponent<Rigidbody>(); 
 
         Physics.gravity *= gravityModifier;
@@ -54,14 +61,19 @@ public class PlayerControllerX : MonoBehaviour
         if (other.gameObject.CompareTag("Bomb"))
         {
             explosionParticle.Play();
+            audioSource.PlayOneShot(boom);
             gameOver = true;
             Debug.Log("Game Over!");
             Destroy(other.gameObject);
         } 
 
         // if player collides with money, fireworks
-        else if (other.gameObject.CompareTag("Money"))
+        if (other.gameObject.CompareTag("Money"))
         {
+            explosionParticle.Stop();
+            audioSource.PlayOneShot(blip);
+            fireWork.Play();
+            Debug.Log("hit money!");
             Destroy(other.gameObject);
         }
     }
