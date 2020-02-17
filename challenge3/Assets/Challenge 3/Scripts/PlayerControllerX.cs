@@ -22,6 +22,7 @@ public class PlayerControllerX : MonoBehaviour
     AudioSource audioSource;
     public AudioClip boom;
     public AudioClip blip;
+    public AudioClip boing;
     
 
     // Start is called before the first frame update
@@ -57,6 +58,7 @@ public class PlayerControllerX : MonoBehaviour
         if(playerRb.transform.position.y <= 2 && !gameOver)
         {
             playerRb.AddForce(Vector3.up * floatForce);
+            audioSource.PlayOneShot(boing);
         }
     }
 
