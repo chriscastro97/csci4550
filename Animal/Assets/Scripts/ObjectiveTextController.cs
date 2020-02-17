@@ -10,12 +10,13 @@ public class ObjectiveTextController : MonoBehaviour
     [SerializeField] Text objectiveText;
     private RingManager ringManager;
     private TimerController timerController;
+    public GameObject endText;
 
     // Start is called before the first frame update
     void Start()
     {
         //Get ringManager
-        ringManager = GameObject.Find("Ring").GetComponent<RingManager>();
+            ringManager = GameObject.Find("Ring").GetComponent<RingManager>();
         //timerController = GameObject.Find("Timer").GetComponent<TimerController>();
 
         //Set the objective text
@@ -29,11 +30,11 @@ public class ObjectiveTextController : MonoBehaviour
     void Update()
     {
 
-        if (ringManager.gameStart)
+        if (ringManager.gameOver)
         {
             //Not working
             //Change the objective text to the score when the game starts
-            //objectiveText.text = "Score: " + timerController.currentTime;
+            endText.gameObject.SetActive(true);
         }
 
     }

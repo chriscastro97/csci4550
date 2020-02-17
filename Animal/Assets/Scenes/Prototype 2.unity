@@ -805,6 +805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveText: {fileID: 936712700}
+  endText: {fileID: 0}
 --- !u!1 &992285705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1072,7 @@ MonoBehaviour:
   gameStart: 0
   gameOver: 0
   minRadius: 3
-  shrinkFactor: 0.5
+  shrinkFactor: 0.4
   waitTime: 0
   timer: {fileID: 902814796}
   spawner: {fileID: 1751908020}
