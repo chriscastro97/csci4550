@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     private GameObject ScoreBoxCamera;
     private GameObject MainCamera;
     private Rigidbody playerRb;
+    
     public float speed;
 
     public bool hasPowerup = false;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject respawnPoint;
 
+    public bool respawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,29 +36,38 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+         respawn = false;
+          if (Input.GetKeyDown("space"))
+                  {
+                      respawn = true;
+                      Respawn(respawn);
+                  }
     }
 
     void FixedUpdate()
-    {
+    {  
+       
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         playerRb.AddForce(movement * speed);
 
-        if (Input.GetKey("r"))
-        {
-            playerRb.AddForce(movement * 0);
-            playerRb.transform.position = respawnPoint.transform.position;
-        }
     }
 
-    void Respawn()
+    void Respawn(bool respawnFlag)
     {
-  
+        if (BallsLeftScript.ballsLeft > 0)
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+            playerRb.velocity = new Vector3(0, 0, 0);
+            playerRb.AddForce(movement * 0);
+            playerRb.transform.position = respawnPoint.transform.position;
+            BallsLeftScript.ballsLeft -= 1;
+        }
 
-        
     }
 
     private void OnTriggerEnter(Collider other)

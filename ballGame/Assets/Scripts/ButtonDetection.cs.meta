@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 29a5f246b11bbe64f9d85a95f8aa0b9e
+timeCreated: 1439160001
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - buttonSound: {fileID: 8300000, guid: 1319a3a65ae4c9841844f3016d1291ef, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
