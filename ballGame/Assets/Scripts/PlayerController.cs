@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey("r"))
         {
+            playerRb.velocity = new Vector3 (0, 0, 0);
             playerRb.AddForce(movement * 0);
             playerRb.transform.position = respawnPoint.transform.position;
         }

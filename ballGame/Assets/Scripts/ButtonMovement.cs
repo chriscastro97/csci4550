@@ -3,13 +3,13 @@ using System.Collections;
 
 public class ButtonMovement : MonoBehaviour {
 
-    //Is this object supposed to rotate?
+    //checks if object is suppose to rotate
     public bool rotation = false;
-    //What is it rotating around?
+    // Sees What is it rotating around
     public Transform rotateAround;
-    //How fast is it rotating?
+    //How fast is it rotating
     public float rotationSpeed = 1f;
-    //Is the rotation clockwise or counter clockwise?
+    //Checks is movement is clockwise or counter clockwise
     public bool clockwiseRotation = true;
     //This will be set to the starting position of this object
     Vector3 startPos;
@@ -17,17 +17,17 @@ public class ButtonMovement : MonoBehaviour {
     public bool movement = true;
     //What direction should it move? Caution: only up, down, left, right, forward and back is recognized
     public string direction = "up";
-    //How far should it move?
+    //How far it moves 
     public float length = 1f;
-    //How  it should  move?
+    //How  long it should move
     public float duration = 1f;
-    //Should this object have a secondary movement?
+    //Flag to see if object wants secondary movement
     public bool secondaryMovement = true;
-    // its second direction
+    // Its second direction
     public string secondaryDirection = "up";
     //Its second length
     public float secLength = 1f;
-    //Its second speed?
+    //Its second speed
     public float secDuration = 1f;
 
 	// Use this for initialization
@@ -38,26 +38,26 @@ public class ButtonMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        //Is it set to rotate?
+        //checks to see if it's sets for rotation 
         if (rotation)
         {
             //Clockwise ot counter clockwise?
             if (clockwiseRotation)
             {
-                //It is rotating around: This object, on this axis, at this speed 
+                // rotating around: This object, on this axis, at this speed 
                 transform.RotateAround(rotateAround.position, Vector3.forward, rotationSpeed * Time.deltaTime);
             }
             else
                 transform.RotateAround(rotateAround.position, Vector3.back, rotationSpeed * Time.deltaTime);
         }
 
-        //Is it set to move?
+        //Sees if the object is set to move
         if (movement == true)
         {
-            //This creates the since wave that handles the movement of the object
+            //Makes the sine wave that handles the movement of the object
             float alpha = Time.timeSinceLevelLoad / duration;
             float distance = length * Mathf.Sin(alpha);
-            //Check what direction it should move
+            //Checks what direction it should move
             switch (direction)
             {
                 case "up":
@@ -81,7 +81,7 @@ public class ButtonMovement : MonoBehaviour {
             }
 
         }
-        //Does this object have a secondary movement?
+        //Sees if the object has a secondary movement
         if (secondaryMovement == true)
         {
             float beta = Time.timeSinceLevelLoad / secDuration;

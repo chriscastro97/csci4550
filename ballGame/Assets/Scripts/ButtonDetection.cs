@@ -4,7 +4,7 @@ using System.Collections;
 public class ButtonDetection : MonoBehaviour {
 
     //The index number of the scene you are changing to
-    public int levelNumber = 0;
+    public int levelNumber = 1;
 
     //The sound that is played on MouseOver
     public AudioClip buttonSound;
@@ -26,7 +26,7 @@ public class ButtonDetection : MonoBehaviour {
         if (this.gameObject.tag == "PlayButton")
         {
             //Load the scene you have chosen before
-            Application.LoadLevel(1);
+            Application.LoadLevel(levelNumber);
         }
         if (this.gameObject.tag == "OptionButton")
         {
@@ -51,7 +51,7 @@ public class ButtonDetection : MonoBehaviour {
         if (buttonSound != null)
         {
             //Play this sound, at this position, at this volume
-            AudioSource.PlayClipAtPoint(buttonSound, this.transform.position, 1f);
+            AudioSource.PlayClipAtPoint(buttonSound, this.transform.position, .2f);
 
         }
 
