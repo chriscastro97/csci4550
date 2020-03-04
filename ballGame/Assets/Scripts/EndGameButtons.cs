@@ -36,7 +36,7 @@ public class EndGameButtons : MonoBehaviour
            
         
 
-        if (this.gameObject.tag == "Reset")
+        if (this.gameObject.tag == "ResetGame")
         {
             SceneManager.LoadScene("Game");
             BallsLeftScript.ballsLeft = 9; 
