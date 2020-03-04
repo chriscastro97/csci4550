@@ -16,6 +16,12 @@ TagManager:
   - Powerup9
   - Powerup7
   - Score Box Camera
+  - Menu
+  - PlayButton
+  - OptionsButton
+  - ExitButton
+  - Return
+  - Reset
   layers:
   - Default
   - TransparentFX

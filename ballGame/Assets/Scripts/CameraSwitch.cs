@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraSwitch : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class CameraSwitch : MonoBehaviour
     public GameObject cameraTwo;
     public GameObject player;
 
+    public PowerUpScript PowerUpScript;
+  
+  
     AudioListener cameraOneAudioLis;
     AudioListener cameraTwoAudioLis;
 
@@ -78,6 +82,11 @@ public class CameraSwitch : MonoBehaviour
 
             cameraOneAudioLis.enabled = false;
             cameraOne.SetActive(false);
+
+            if (BallsLeftScript.ballsLeft == 0)
+            {
+                PowerUpScript.ActiveEnd();
+            }
         }
 
     }
