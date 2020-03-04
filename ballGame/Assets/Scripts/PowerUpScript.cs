@@ -5,6 +5,10 @@ using UnityEngine;
 public class PowerUpScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject respawnText;
+    public GameObject endGameReset;
+    public GameObject endGameExit;
+    public GameObject gameOverText;
     void Start()
     {
         
@@ -22,9 +26,22 @@ public class PowerUpScript : MonoBehaviour
         {
             
             ScoreScript.scoreValue += 100;
-            BallsLeftScript.ballsLeft -= 1;
+            if (BallsLeftScript.ballsLeft == 0)
+            {
+                ActiveEnd();
+            }
+            // if statment once ball enters at 0
         }
-    }
+    }  
+    
+    public void ActiveEnd(){
+                     respawnText.SetActive(false);
+                     endGameExit.SetActive(true);
+                     endGameReset.SetActive(true);
+                     gameOverText.SetActive(true);
+     }
 }
+
+  
 
 

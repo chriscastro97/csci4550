@@ -6,6 +6,17 @@ public class ButtonDetection : MonoBehaviour {
     //The index number of the scene you are changing to
     public int levelNumber = 1;
 
+    public GameObject MainMenu;
+
+    public GameObject MainMenuCircles;
+
+    private HighScoreScript highscore;
+    public GameObject OptionBackground;
+    public GameObject HighScoreText;
+
+    public GameObject ControlText;
+
+    public GameObject goaltext;
     //The sound that is played on MouseOver
     public AudioClip buttonSound;
 	// Use this for initialization
@@ -28,9 +39,15 @@ public class ButtonDetection : MonoBehaviour {
             //Load the scene you have chosen before
             Application.LoadLevel(levelNumber);
         }
-        if (this.gameObject.tag == "OptionButton")
+        if (this.gameObject.tag == "OptionsButton")
         {
-
+             Debug.Log("Clicked option");
+            MainMenu.SetActive(false);
+            MainMenuCircles.SetActive(false);
+            OptionBackground.SetActive(true);
+            goaltext.SetActive(true);
+            HighScoreText.SetActive(true);
+            ControlText.SetActive(true);
         }
         if (this.gameObject.tag == "ExitButton")
         {
@@ -38,9 +55,23 @@ public class ButtonDetection : MonoBehaviour {
             Debug.Log("exit pressed");
             Application.Quit();
         }
-        if (this.gameObject.tag == "Untagged")
+        if (this.gameObject.tag == "Return")
         {
             Debug.Log("You need to Tag this button!!");
+            MainMenu.SetActive(true);
+            MainMenuCircles.SetActive(true);
+            OptionBackground.SetActive(false);
+            goaltext.SetActive(false);
+            HighScoreText.SetActive(false);
+            ControlText.SetActive(false);
+            
+        }
+
+        if (this.gameObject.tag == "Reset")
+        {
+            PlayerPrefs.DeleteKey("HIGHSCORE");
+            PlayerPrefs.SetInt("HIGHSCORE", 0);
+        
         }
 
     }
