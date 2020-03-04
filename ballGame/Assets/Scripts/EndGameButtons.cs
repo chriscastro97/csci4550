@@ -32,9 +32,14 @@ public class EndGameButtons : MonoBehaviour
             Debug.Log("exit pressed");
             Application.Quit();
         }
-      
-           
-        
+
+        if (this.gameObject.tag == "Return")
+        {
+            SceneManager.LoadScene("MainMenu");
+            
+        }
+
+
 
         if (this.gameObject.tag == "ResetGame")
         {
