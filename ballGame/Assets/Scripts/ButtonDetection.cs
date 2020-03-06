@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Video;
 using System.Collections;
+using UnityEngine.UIElements;
 
 public class ButtonDetection : MonoBehaviour {
 
@@ -10,6 +12,15 @@ public class ButtonDetection : MonoBehaviour {
 
     public GameObject MainMenuCircles;
 
+
+    [SerializeField]
+    private VideoPlayer exitVideoPlayer;
+
+  
+    
+    private double exitVideoLength;
+     
+
     private HighScoreScript highscore;
     public GameObject OptionBackground;
     public GameObject HighScoreText;
@@ -19,10 +30,20 @@ public class ButtonDetection : MonoBehaviour {
     public GameObject goaltext;
     //The sound that is played on MouseOver
     public AudioClip buttonSound;
+
+    [SerializeField]
+    private AudioClip ButtonClick;
+    
+    [SerializeField]
+    private AudioClip ButtonRest;
+    private AudioSource audioSource;
 	// Use this for initialization
-	void Start () {
-	
-	}
+	void Start ()
+    {
+        audioSource = Camera.main.GetComponent<AudioSource>();
+        exitVideoLength = exitVideoPlayer.clip.length;
+      
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -37,11 +58,13 @@ public class ButtonDetection : MonoBehaviour {
         if (this.gameObject.tag == "PlayButton")
         {
             //Load the scene you have chosen before
+            audioSource.PlayOneShot(ButtonClick);
             Application.LoadLevel(levelNumber);
         }
         if (this.gameObject.tag == "OptionsButton")
         {
              Debug.Log("Clicked option");
+             audioSource.PlayOneShot(ButtonClick);
             MainMenu.SetActive(false);
             MainMenuCircles.SetActive(false);
             OptionBackground.SetActive(true);
@@ -52,12 +75,16 @@ public class ButtonDetection : MonoBehaviour {
         if (this.gameObject.tag == "ExitButton")
         {
             //Quits the application
+            audioSource.Stop();
+            exitVideoPlayer.Play();
+            StartCoroutine(WaitAndQuit(exitVideoLength));
             Debug.Log("exit pressed");
-            Application.Quit();
+            
         }
         if (this.gameObject.tag == "Return")
         {
             Debug.Log("You need to Tag this button!!");
+            audioSource.PlayOneShot(ButtonClick);
             MainMenu.SetActive(true);
             MainMenuCircles.SetActive(true);
             OptionBackground.SetActive(false);
@@ -69,6 +96,10 @@ public class ButtonDetection : MonoBehaviour {
 
         if (this.gameObject.tag == "Reset")
         {
+            if (PlayerPrefs.GetInt("HIGHSCORE", 0) > 0)
+            {
+                audioSource.PlayOneShot(ButtonRest);
+            }
             PlayerPrefs.DeleteKey("HIGHSCORE");
             PlayerPrefs.SetInt("HIGHSCORE", 0);
         
@@ -76,6 +107,10 @@ public class ButtonDetection : MonoBehaviour {
 
     }
     
+    private IEnumerator WaitAndQuit(double value) {
+        yield return new WaitForSeconds((float) value);
+        Application.Quit();
+    }
     void OnMouseEnter()
     {
         //Does this object have a sound?
