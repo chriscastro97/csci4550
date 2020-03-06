@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BallsLeftScript : MonoBehaviour
 {
-    public static int ballsLeft = 9;
+    public static int ballsLeft = 8;
 
     Text ballsLeftText;
     // Start is called before the first frame update

@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6134777996611496288}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: ResetGame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,10 +121,9 @@ GameObject:
   - component: {fileID: 6134777996602860772}
   - component: {fileID: 6134777996602796326}
   - component: {fileID: 6134777996607632554}
-  - component: {fileID: 3174544262447727774}
   m_Layer: 0
-  m_Name: Reset (1)
-  m_TagString: Reset
+  m_Name: ResetGame
+  m_TagString: ResetGame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,11 +182,14 @@ MonoBehaviour:
   levelNumber: 0
   MainMenu: {fileID: 0}
   MainMenuCircles: {fileID: 0}
+  exitVideoPlayer: {fileID: 0}
   OptionBackground: {fileID: 0}
   HighScoreText: {fileID: 0}
   ControlText: {fileID: 0}
   goaltext: {fileID: 0}
   buttonSound: {fileID: 8300000, guid: 1319a3a65ae4c9841844f3016d1291ef, type: 3}
+  ButtonClick: {fileID: 0}
+  ButtonRest: {fileID: 0}
 --- !u!65 &6134777996607632554
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -201,17 +203,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.1, z: 0.04}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3174544262447727774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6134777996609577276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d41b6bd60f615554c93705adbf5350e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelNumber: 1
-  buttonSound: {fileID: 8300000, guid: 1319a3a65ae4c9841844f3016d1291ef, type: 3}

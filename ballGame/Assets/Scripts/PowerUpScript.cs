@@ -9,6 +9,8 @@ public class PowerUpScript : MonoBehaviour
     public GameObject endGameReset;
     public GameObject endGameExit;
     public GameObject gameOverText;
+
+
     void Start()
     {
         
@@ -24,6 +26,7 @@ public class PowerUpScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+          
             
             ScoreScript.scoreValue += 100;
             if (BallsLeftScript.ballsLeft == 0)
@@ -39,7 +42,8 @@ public class PowerUpScript : MonoBehaviour
                      endGameExit.SetActive(true);
                      endGameReset.SetActive(true);
                      gameOverText.SetActive(true);
-     }
+
+    }
 }
 
   

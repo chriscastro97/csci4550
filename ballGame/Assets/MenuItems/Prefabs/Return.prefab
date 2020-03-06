@@ -65,7 +65,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112034}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29a5f246b11bbe64f9d85a95f8aa0b9e, type: 3}
   m_Name: 
@@ -73,9 +73,14 @@ MonoBehaviour:
   levelNumber: 1
   MainMenu: {fileID: 0}
   MainMenuCircles: {fileID: 0}
+  exitVideoPlayer: {fileID: 0}
   OptionBackground: {fileID: 0}
-  Text: {fileID: 0}
+  HighScoreText: {fileID: 0}
+  ControlText: {fileID: 0}
+  goaltext: {fileID: 0}
   buttonSound: {fileID: 8300000, guid: 1319a3a65ae4c9841844f3016d1291ef, type: 3}
+  ButtonClick: {fileID: 0}
+  ButtonRest: {fileID: 0}
 --- !u!65 &6578228
 BoxCollider:
   m_ObjectHideFlags: 0

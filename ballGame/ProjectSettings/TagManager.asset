@@ -23,6 +23,7 @@ TagManager:
   - Return
   - Reset
   - ResetGame
+  - ReturnHome
   layers:
   - Default
   - TransparentFX

@@ -8,7 +8,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     
     public float speed;
+    [SerializeField] private AudioSource AudioSource;
+    [SerializeField] private AudioClip  respawnClip;
+    [SerializeField] private AudioClip  noSpawnClip;
 
+    
     public bool hasPowerup = false;
     private float powerUpStrength = 15;
     private float powerUpTime = 5;
@@ -23,7 +27,27 @@ public class PlayerController : MonoBehaviour
     public GameObject scoreStar8;
     public GameObject scoreStar9;
 
+
+    private bool hasEntered1;
+    private bool hasEntered2;
+    private bool hasEntered3;
+    private bool hasEntered4;
+    private bool hasEntered5;
+    private bool hasEntered6;
+    private bool hasEntered7;
+    private bool hasEntered8;
+    private bool hasEntered9;
+
+    [SerializeField] private ParticleSystem ScoreBoxParticle;
+    [SerializeField] private AudioSource scoreBoxAudio;
+    [SerializeField] private AudioClip boom;
+    [SerializeField] private AudioClip sameHole;
+
+
     public GameObject respawnPoint;
+
+
+    
 
     public bool respawn;
     // Start is called before the first frame update
@@ -41,6 +65,7 @@ public class PlayerController : MonoBehaviour
                   {
                       respawn = true;
                       Respawn(respawn);
+                    
                   }
     }
 
@@ -66,6 +91,14 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(movement * 0);
             playerRb.transform.position = respawnPoint.transform.position;
             BallsLeftScript.ballsLeft -= 1;
+            AudioSource.PlayOneShot(respawnClip);
+        }
+        else
+        {
+            AudioSource.PlayOneShot(noSpawnClip);
+        }
+        {
+            
         }
 
     }
@@ -75,75 +108,125 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Powerup1"))
         {
-            Destroy(other.gameObject);
-            hasPowerup = true;
+           
 
-            scoreStar1.gameObject.SetActive(true);
+            
+                scoreBoxAudio.PlayOneShot(boom);
+                 ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+            
+
+                scoreStar1.gameObject.SetActive(true);
+            
+          
         }
 
         if (other.CompareTag("Powerup2"))
         {
-            Destroy(other.gameObject);
-            hasPowerup = true;
 
-            scoreStar2.gameObject.SetActive(true);
+
+            scoreBoxAudio.PlayOneShot(boom);
+            
+            ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+
+
+                scoreStar2.gameObject.SetActive(true);
+            
         }
 
         if (other.CompareTag("Powerup3"))
         {
+
+            scoreBoxAudio.PlayOneShot(boom);
+            ScoreBoxParticle.Play();
             Destroy(other.gameObject);
             hasPowerup = true;
-
-            scoreStar3.gameObject.SetActive(true);
+           scoreStar3.gameObject.SetActive(true);
+            
         }
 
         if (other.CompareTag("Powerup4"))
         {
-            Destroy(other.gameObject);
-            hasPowerup = true;
 
-            scoreStar4.gameObject.SetActive(true);
+                scoreBoxAudio.PlayOneShot(boom);
+
+                ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+
+                scoreStar4.gameObject.SetActive(true);
+            
         }
 
         if (other.CompareTag("Powerup5"))
         {
-            Destroy(other.gameObject);
-            hasPowerup = true;
 
-            scoreStar5.gameObject.SetActive(true);
+            scoreBoxAudio.PlayOneShot(boom);
+
+            ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+
+               scoreStar5.gameObject.SetActive(true);
+          
         }
 
         if (other.CompareTag("Powerup6"))
         {
-            Destroy(other.gameObject);
-            hasPowerup = true;
 
-            scoreStar6.gameObject.SetActive(true);
+            scoreBoxAudio.PlayOneShot(boom);
+
+            ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+
+                scoreStar6.gameObject.SetActive(true);
+            
         }
 
         if (other.CompareTag("Powerup7"))
         {
-            Destroy(other.gameObject);
-            hasPowerup = true;
 
-            scoreStar7.gameObject.SetActive(true);
+            scoreBoxAudio.PlayOneShot(boom);
 
+
+            ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+
+                scoreStar7.gameObject.SetActive(true);
+           
         }
 
         if (other.CompareTag("Powerup8"))
         {
-            Destroy(other.gameObject);
-            hasPowerup = true;
 
-            scoreStar8.gameObject.SetActive(true);
+            scoreBoxAudio.PlayOneShot(boom);
+
+
+            ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+                scoreStar8.gameObject.SetActive(true);
+           
         }
 
         if (other.CompareTag("Powerup9"))
         {
-            Destroy(other.gameObject);
-            hasPowerup = true;
 
-            scoreStar9.gameObject.SetActive(true);
+            scoreBoxAudio.PlayOneShot(boom);
+
+
+            ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+                scoreStar9.gameObject.SetActive(true);
+           
+
+
         }
     }
 
@@ -156,6 +239,15 @@ public class PlayerController : MonoBehaviour
             enemyRb.AddForce(awayFromPlayer * powerUpStrength, ForceMode.Impulse);
         }
     }
+
+    IEnumerator WaitForParticle(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+
+
+    }
+
 
     IEnumerator PowerupCountdownRoutine()
     {
