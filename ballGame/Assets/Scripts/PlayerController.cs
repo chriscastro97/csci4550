@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public GameObject scoreStar8;
     public GameObject scoreStar9;
 
+    [SerializeField] private ParticleSystem ScoreBoxParticle;
+
     public GameObject respawnPoint;
 
     public bool respawn;
@@ -88,6 +90,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Powerup1"))
         {
+            ScoreBoxParticle.Play();
             Destroy(other.gameObject);
             hasPowerup = true;
 
@@ -96,6 +99,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Powerup2"))
         {
+
+            ScoreBoxParticle.Play();
             Destroy(other.gameObject);
             hasPowerup = true;
 
@@ -104,6 +109,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Powerup3"))
         {
+
+            ScoreBoxParticle.Play();
             Destroy(other.gameObject);
             hasPowerup = true;
 
@@ -112,6 +119,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Powerup4"))
         {
+
+            ScoreBoxParticle.Play();
             Destroy(other.gameObject);
             hasPowerup = true;
 
@@ -120,6 +129,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Powerup5"))
         {
+
+            ScoreBoxParticle.Play();
             Destroy(other.gameObject);
             hasPowerup = true;
 
@@ -128,6 +139,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Powerup6"))
         {
+
+            ScoreBoxParticle.Play();
             Destroy(other.gameObject);
             hasPowerup = true;
 
@@ -136,6 +149,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Powerup7"))
         {
+
+            ScoreBoxParticle.Play();
             Destroy(other.gameObject);
             hasPowerup = true;
 
@@ -145,6 +160,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Powerup8"))
         {
+
+            ScoreBoxParticle.Play();
             Destroy(other.gameObject);
             hasPowerup = true;
 
@@ -153,6 +170,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Powerup9"))
         {
+
+            ScoreBoxParticle.Play();
             Destroy(other.gameObject);
             hasPowerup = true;
 
@@ -169,6 +188,15 @@ public class PlayerController : MonoBehaviour
             enemyRb.AddForce(awayFromPlayer * powerUpStrength, ForceMode.Impulse);
         }
     }
+
+    IEnumerator WaitForParticle(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+
+
+    }
+
 
     IEnumerator PowerupCountdownRoutine()
     {
