@@ -14,13 +14,21 @@ public class EndGameButtons : MonoBehaviour
     public AudioClip buttonSound;
     public AudioClip click;
     public AudioClip clickReset;
-    AudioSource AudioSource;
+     
+    private AudioSource AudioSource;
   
     
     
     
     [SerializeField]
     private GameObject  player;
+    
+    [SerializeField]
+    private GameObject  cam;
+    
+    [SerializeField]
+    private AudioSource camSource;
+    
     [SerializeField]
     private GameObject  balltext; 
     [SerializeField]
@@ -36,6 +44,7 @@ public class EndGameButtons : MonoBehaviour
     {
         
        exitVideoLength = exitVideoPlayer.clip.length;
+       camSource = cam.GetComponent<AudioSource>();
         AudioSource = player.GetComponent<AudioSource>();
         AudioSource.Stop();
         AudioSource.PlayOneShot(EndGameMusic);
@@ -65,11 +74,11 @@ public class EndGameButtons : MonoBehaviour
          
         }
 
-        if (this.gameObject.tag == "Return")
+        if (this.gameObject.tag == "ReturnHome")
         {     
-            AudioSource.PlayOneShot(click);
             AudioSource.Stop();
-            
+            camSource.Stop();
+            camSource.PlayOneShot(click);
             balltext.SetActive(false);
             scoretext.SetActive(false);
             SceneManager.LoadScene("MainMenu");
@@ -81,9 +90,12 @@ public class EndGameButtons : MonoBehaviour
 
 
         if (this.gameObject.tag == "ResetGame")
-        {
+        {  
+           
             AudioSource.Stop();
-            AudioSource.PlayOneShot(clickReset);
+            camSource.Stop();
+           camSource.PlayOneShot(clickReset);
+            
             SceneManager.LoadScene("Game");
             BallsLeftScript.ballsLeft = 9; 
             ScoreScript.scoreValue = 0;

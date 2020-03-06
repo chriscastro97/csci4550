@@ -40,7 +40,7 @@ public class ButtonDetection : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        audioSource = Camera.main.GetComponent<AudioSource>();
+       audioSource = Camera.main.GetComponent<AudioSource>();
         exitVideoLength = exitVideoPlayer.clip.length;
       
     }
@@ -48,6 +48,7 @@ public class ButtonDetection : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+        
 	}
 
     void OnMouseDown()
@@ -84,6 +85,7 @@ public class ButtonDetection : MonoBehaviour {
         if (this.gameObject.tag == "Return")
         {
             Debug.Log("You need to Tag this button!!");
+         
             audioSource.PlayOneShot(ButtonClick);
             MainMenu.SetActive(true);
             MainMenuCircles.SetActive(true);
@@ -116,6 +118,7 @@ public class ButtonDetection : MonoBehaviour {
         //Does this object have a sound?
         if (buttonSound != null)
         {
+            
             //Play this sound, at this position, at this volume
             AudioSource.PlayClipAtPoint(buttonSound, this.transform.position, .2f);
 
