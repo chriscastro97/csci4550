@@ -29,6 +29,8 @@ public class EndGameButtons : MonoBehaviour
     [SerializeField]
     private AudioSource camSource;
     
+    
+   public AudioSource  ResetButton; 
     [SerializeField]
     private GameObject  balltext; 
     [SerializeField]
@@ -94,9 +96,10 @@ public class EndGameButtons : MonoBehaviour
            
             AudioSource.Stop();
             camSource.Stop();
-           camSource.PlayOneShot(clickReset);
+            ResetButton.PlayOneShot(clickReset);
+            double legnth = clickReset.length;
+            StartCoroutine(Wait(legnth));
             
-            SceneManager.LoadScene("Game");
             BallsLeftScript.ballsLeft = 9; 
             ScoreScript.scoreValue = 0;
             
@@ -108,7 +111,13 @@ public class EndGameButtons : MonoBehaviour
         yield return new WaitForSeconds((float) value);
         Application.Quit();
     }
-    
+
+    private IEnumerator Wait(double value)
+    {
+        yield return new WaitForSeconds((float) value);
+          SceneManager.LoadScene("Game");
+
+    }
     void OnMouseEnter()
     {
         //Does this object have a sound?

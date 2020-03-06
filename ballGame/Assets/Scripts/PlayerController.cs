@@ -8,7 +8,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     
     public float speed;
+    [SerializeField] private AudioSource AudioSource;
+    [SerializeField] private AudioClip  respawnClip;
+    [SerializeField] private AudioClip  noSpawnClip;
 
+    
     public bool hasPowerup = false;
     private float powerUpStrength = 15;
     private float powerUpTime = 5;
@@ -41,6 +45,7 @@ public class PlayerController : MonoBehaviour
                   {
                       respawn = true;
                       Respawn(respawn);
+                    
                   }
     }
 
@@ -66,6 +71,14 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(movement * 0);
             playerRb.transform.position = respawnPoint.transform.position;
             BallsLeftScript.ballsLeft -= 1;
+            AudioSource.PlayOneShot(respawnClip);
+        }
+        else
+        {
+            AudioSource.PlayOneShot(noSpawnClip);
+        }
+        {
+            
         }
 
     }
