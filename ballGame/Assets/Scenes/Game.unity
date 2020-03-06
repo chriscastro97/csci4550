@@ -4516,7 +4516,7 @@ GameObject:
   - component: {fileID: 1610766622}
   - component: {fileID: 1610766621}
   m_Layer: 5
-  m_Name: YattaSFX
+  m_Name: ScoreBoxFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4532,7 +4532,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c811ba22838c06349825afb3b71252c1, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -7199,6 +7199,16 @@ PrefabInstance:
       propertyPath: ScoreBoxParticle
       value: 
       objectReference: {fileID: 248896572}
+    - target: {fileID: 6875102898842180057, guid: dfdbc942620eba34185a2ce52a109167,
+        type: 3}
+      propertyPath: scoreBoxAudio
+      value: 
+      objectReference: {fileID: 1610766621}
+    - target: {fileID: 6875102898842180057, guid: dfdbc942620eba34185a2ce52a109167,
+        type: 3}
+      propertyPath: boom
+      value: 
+      objectReference: {fileID: 8300000, guid: c811ba22838c06349825afb3b71252c1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfdbc942620eba34185a2ce52a109167, type: 3}
 --- !u!1001 &7305732181041295649

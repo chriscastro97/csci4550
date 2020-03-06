@@ -42,7 +42,8 @@ public class PowerUpScript : MonoBehaviour
                      endGameExit.SetActive(true);
                      endGameReset.SetActive(true);
                      gameOverText.SetActive(true);
-     }
+
+    }
 }
 
   

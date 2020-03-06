@@ -27,9 +27,27 @@ public class PlayerController : MonoBehaviour
     public GameObject scoreStar8;
     public GameObject scoreStar9;
 
+
+    private bool hasEntered1;
+    private bool hasEntered2;
+    private bool hasEntered3;
+    private bool hasEntered4;
+    private bool hasEntered5;
+    private bool hasEntered6;
+    private bool hasEntered7;
+    private bool hasEntered8;
+    private bool hasEntered9;
+
     [SerializeField] private ParticleSystem ScoreBoxParticle;
+    [SerializeField] private AudioSource scoreBoxAudio;
+    [SerializeField] private AudioClip boom;
+    [SerializeField] private AudioClip sameHole;
+
 
     public GameObject respawnPoint;
+
+
+    
 
     public bool respawn;
     // Start is called before the first frame update
@@ -90,92 +108,125 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Powerup1"))
         {
-            ScoreBoxParticle.Play();
-            Destroy(other.gameObject);
-            hasPowerup = true;
+           
 
-            scoreStar1.gameObject.SetActive(true);
+            
+                scoreBoxAudio.PlayOneShot(boom);
+                 ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+            
+
+                scoreStar1.gameObject.SetActive(true);
+            
+          
         }
 
         if (other.CompareTag("Powerup2"))
         {
 
-            ScoreBoxParticle.Play();
-            Destroy(other.gameObject);
-            hasPowerup = true;
 
-            scoreStar2.gameObject.SetActive(true);
+            scoreBoxAudio.PlayOneShot(boom);
+            
+            ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+
+
+                scoreStar2.gameObject.SetActive(true);
+            
         }
 
         if (other.CompareTag("Powerup3"))
         {
 
+            scoreBoxAudio.PlayOneShot(boom);
             ScoreBoxParticle.Play();
             Destroy(other.gameObject);
             hasPowerup = true;
-
-            scoreStar3.gameObject.SetActive(true);
+           scoreStar3.gameObject.SetActive(true);
+            
         }
 
         if (other.CompareTag("Powerup4"))
         {
 
-            ScoreBoxParticle.Play();
-            Destroy(other.gameObject);
-            hasPowerup = true;
+                scoreBoxAudio.PlayOneShot(boom);
 
-            scoreStar4.gameObject.SetActive(true);
+                ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+
+                scoreStar4.gameObject.SetActive(true);
+            
         }
 
         if (other.CompareTag("Powerup5"))
         {
 
-            ScoreBoxParticle.Play();
-            Destroy(other.gameObject);
-            hasPowerup = true;
+            scoreBoxAudio.PlayOneShot(boom);
 
-            scoreStar5.gameObject.SetActive(true);
+            ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+
+               scoreStar5.gameObject.SetActive(true);
+          
         }
 
         if (other.CompareTag("Powerup6"))
         {
 
-            ScoreBoxParticle.Play();
-            Destroy(other.gameObject);
-            hasPowerup = true;
+            scoreBoxAudio.PlayOneShot(boom);
 
-            scoreStar6.gameObject.SetActive(true);
+            ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+
+                scoreStar6.gameObject.SetActive(true);
+            
         }
 
         if (other.CompareTag("Powerup7"))
         {
 
+            scoreBoxAudio.PlayOneShot(boom);
+
+
             ScoreBoxParticle.Play();
-            Destroy(other.gameObject);
-            hasPowerup = true;
+                Destroy(other.gameObject);
+                hasPowerup = true;
 
-            scoreStar7.gameObject.SetActive(true);
-
+                scoreStar7.gameObject.SetActive(true);
+           
         }
 
         if (other.CompareTag("Powerup8"))
         {
 
-            ScoreBoxParticle.Play();
-            Destroy(other.gameObject);
-            hasPowerup = true;
+            scoreBoxAudio.PlayOneShot(boom);
 
-            scoreStar8.gameObject.SetActive(true);
+
+            ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+                scoreStar8.gameObject.SetActive(true);
+           
         }
 
         if (other.CompareTag("Powerup9"))
         {
 
-            ScoreBoxParticle.Play();
-            Destroy(other.gameObject);
-            hasPowerup = true;
+            scoreBoxAudio.PlayOneShot(boom);
 
-            scoreStar9.gameObject.SetActive(true);
+
+            ScoreBoxParticle.Play();
+                Destroy(other.gameObject);
+                hasPowerup = true;
+                scoreStar9.gameObject.SetActive(true);
+           
+
+
         }
     }
 
