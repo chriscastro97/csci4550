@@ -100,7 +100,7 @@ public class EndGameButtons : MonoBehaviour
             double legnth = clickReset.length;
             StartCoroutine(Wait(legnth));
             
-            BallsLeftScript.ballsLeft = 9; 
+            BallsLeftScript.ballsLeft = 8; 
             ScoreScript.scoreValue = 0;
             
         }
