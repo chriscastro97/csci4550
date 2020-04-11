@@ -1,0 +1,102 @@
+2020-04-10 21:42:26.6346 [DEBUG] Validating model...
+2020-04-10 21:42:26.7517 [DEBUG] Model validated
+2020-04-10 21:42:26.7517 [DEBUG] Authenticating with server...
+2020-04-10 21:42:26.9077 [DEBUG] Connected to room. (121825:SceneFusion:SceneFusion)
+2020-04-10 21:42:26.9167 [INFO] Connected to server.
+2020-04-10 21:42:26.9177 [DEBUG] OS : Microsoft Windows NT 10.0.18362.0
+2020-04-10 21:42:26.9177 [DEBUG] Unity Version : 2019.3.4f1
+2020-04-10 21:42:26.9187 [DEBUG] Pro License : False
+2020-04-10 21:42:26.9187 [DEBUG] Platform : WindowsEditor
+2020-04-10 21:42:26.9217 [DEBUG] Build Target : StandaloneWindows64
+2020-04-10 21:42:26.9227 [DEBUG] Scene Fusion version : 1.8.7
+2020-04-10 21:42:26.9227 [DEBUG] Scene Fusion client build : 0
+2020-04-10 21:42:26.9227 [DEBUG] User : bucciarellin16@students.ecu.edu
+2020-04-10 21:42:26.9227 [DEBUG] Waiting for server response
+2020-04-10 21:42:27.0877 [DEBUG] Tier: Indie (4 Seats), Permissions: 00000A02
+2020-04-10 21:42:27.0877 [DEBUG] User Permissions: FFFFFFFF
+2020-04-10 21:42:27.4694 [DEBUG] No stand-in for UnityEngine.MovieTexture
+2020-04-10 21:42:27.4704 [DEBUG] No stand-in for UnityEngine.Experimental.Rendering.RayTracingShader
+2020-04-10 21:42:27.4704 [DEBUG] No stand-in for UnityEngine.LocalizationAsset
+2020-04-10 21:42:27.4704 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2020-04-10 21:42:27.4704 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2020-04-10 21:42:27.4704 [DEBUG] No stand-in for UnityEngine.TerrainLayer
+2020-04-10 21:42:27.4704 [DEBUG] No stand-in for UnityEngine.VFX.VisualEffectAsset
+2020-04-10 21:42:29.4304 [DEBUG] Loading complete
+2020-04-10 21:42:38.7664 [DEBUG] Disconnecting temporarily to enter play mode.
+2020-04-10 21:42:38.7664 [DEBUG] Disconnecting from room (121825:SceneFusion:SceneFusion)
+2020-04-10 21:42:38.7704 [INFO] Disconnected from server.
+2020-04-10 21:42:38.7704 [DEBUG] Disconnect. (Duration: 11)
+2020-04-10 21:42:38.9434 [INFO] Static batching in play mode is not supported in a Scene Fusion session and will be temporarily disabled.
+2020-04-10 21:42:42.8485 [DEBUG] Scene Fusion version 1.8.7-0
+2020-04-10 21:42:43.1057 [DEBUG] Play mode: True, sync in play mode: True
+2020-04-10 21:42:43.2940 [DEBUG] Connecting
+2020-04-10 21:42:43.3706 [DEBUG] Connecting to room (121825:SceneFusion:SceneFusion) via TCP at roommanager-ec2-35-164-71-216.kinematicsoup.com:21312
+2020-04-10 21:42:43.3777 [DEBUG] Guest connection. (Session: 121825)
+2020-04-10 21:42:43.6809 [DEBUG] Validating model...
+2020-04-10 21:42:43.7909 [DEBUG] Model validated
+2020-04-10 21:42:43.7919 [DEBUG] Authenticating with server...
+2020-04-10 21:42:43.9289 [DEBUG] Connected to room. (121825:SceneFusion:SceneFusion)
+2020-04-10 21:42:43.9405 [INFO] Connected to server.
+2020-04-10 21:42:43.9415 [DEBUG] OS : Microsoft Windows NT 10.0.18362.0
+2020-04-10 21:42:43.9415 [DEBUG] Unity Version : 2019.3.4f1
+2020-04-10 21:42:43.9425 [DEBUG] Pro License : False
+2020-04-10 21:42:43.9425 [DEBUG] Platform : WindowsEditor
+2020-04-10 21:42:43.9425 [DEBUG] Build Target : StandaloneWindows64
+2020-04-10 21:42:43.9425 [DEBUG] Scene Fusion version : 1.8.7
+2020-04-10 21:42:43.9425 [DEBUG] Scene Fusion client build : 0
+2020-04-10 21:42:43.9425 [DEBUG] User : bucciarellin16@students.ecu.edu
+2020-04-10 21:42:43.9425 [DEBUG] Waiting for server response
+2020-04-10 21:42:44.1045 [DEBUG] Tier: Indie (4 Seats), Permissions: 00000A02
+2020-04-10 21:42:44.1045 [DEBUG] User Permissions: FFFFFFFF
+2020-04-10 21:42:44.2245 [DEBUG] No stand-in for UnityEngine.MovieTexture
+2020-04-10 21:42:44.2245 [DEBUG] No stand-in for UnityEngine.Experimental.Rendering.RayTracingShader
+2020-04-10 21:42:44.2245 [DEBUG] No stand-in for UnityEngine.LocalizationAsset
+2020-04-10 21:42:44.2245 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2020-04-10 21:42:44.2255 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2020-04-10 21:42:44.2255 [DEBUG] No stand-in for UnityEngine.TerrainLayer
+2020-04-10 21:42:44.2255 [DEBUG] No stand-in for UnityEngine.VFX.VisualEffectAsset
+2020-04-10 21:42:44.7090 [DEBUG] Loading complete
+2020-04-10 21:42:54.4022 [DEBUG] Play mode: False
+2020-04-10 21:42:54.5342 [DEBUG] Loading complete
+2020-04-10 21:43:41.7447 [DEBUG] Spawn request. (Objects: 1)
+2020-04-10 21:47:39.5705 [DEBUG] Disconnecting temporarily to enter play mode.
+2020-04-10 21:47:39.5714 [DEBUG] Disconnecting from room (121825:SceneFusion:SceneFusion)
+2020-04-10 21:47:39.5744 [INFO] Disconnected from server.
+2020-04-10 21:47:39.5744 [DEBUG] Disconnect. (Duration: 285)
+2020-04-10 21:47:39.6295 [INFO] Static batching in play mode is not supported in a Scene Fusion session and will be temporarily disabled.
+2020-04-10 21:47:43.6667 [DEBUG] Scene Fusion version 1.8.7-0
+2020-04-10 21:47:43.9246 [DEBUG] Play mode: True, sync in play mode: True
+2020-04-10 21:47:44.0876 [DEBUG] Connecting
+2020-04-10 21:47:44.1766 [DEBUG] Connecting to room (121825:SceneFusion:SceneFusion) via TCP at roommanager-ec2-35-164-71-216.kinematicsoup.com:21312
+2020-04-10 21:47:44.2036 [DEBUG] Guest connection. (Session: 121825)
+2020-04-10 21:47:44.5636 [DEBUG] Validating model...
+2020-04-10 21:47:44.6686 [DEBUG] Model validated
+2020-04-10 21:47:44.6686 [DEBUG] Authenticating with server...
+2020-04-10 21:47:44.8106 [DEBUG] Connected to room. (121825:SceneFusion:SceneFusion)
+2020-04-10 21:47:44.8476 [INFO] Connected to server.
+2020-04-10 21:47:44.8486 [DEBUG] OS : Microsoft Windows NT 10.0.18362.0
+2020-04-10 21:47:44.8486 [DEBUG] Unity Version : 2019.3.4f1
+2020-04-10 21:47:44.8486 [DEBUG] Pro License : False
+2020-04-10 21:47:44.8496 [DEBUG] Platform : WindowsEditor
+2020-04-10 21:47:44.8496 [DEBUG] Build Target : StandaloneWindows64
+2020-04-10 21:47:44.8496 [DEBUG] Scene Fusion version : 1.8.7
+2020-04-10 21:47:44.8496 [DEBUG] Scene Fusion client build : 0
+2020-04-10 21:47:44.8496 [DEBUG] User : bucciarellin16@students.ecu.edu
+2020-04-10 21:47:44.8496 [DEBUG] Waiting for server response
+2020-04-10 21:47:44.9556 [DEBUG] Tier: Indie (4 Seats), Permissions: 00000A02
+2020-04-10 21:47:44.9556 [DEBUG] User Permissions: FFFFFFFF
+2020-04-10 21:47:45.0756 [DEBUG] No stand-in for UnityEngine.MovieTexture
+2020-04-10 21:47:45.0756 [DEBUG] No stand-in for UnityEngine.Experimental.Rendering.RayTracingShader
+2020-04-10 21:47:45.0756 [DEBUG] No stand-in for UnityEngine.LocalizationAsset
+2020-04-10 21:47:45.0766 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2020-04-10 21:47:45.0766 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2020-04-10 21:47:45.0766 [DEBUG] No stand-in for UnityEngine.TerrainLayer
+2020-04-10 21:47:45.0766 [DEBUG] No stand-in for UnityEngine.VFX.VisualEffectAsset
+2020-04-10 21:47:45.5776 [DEBUG] Loading complete
+2020-04-10 21:47:56.8756 [DEBUG] Play mode: False
+2020-04-10 21:47:56.9977 [DEBUG] Loading complete
+2020-04-10 21:48:42.3961 [DEBUG] Spawn request. (Objects: 1)
+2020-04-10 21:54:58.7603 [DEBUG] Spawn request. (Objects: 1)
+2020-04-10 21:55:11.6249 [DEBUG] Spawn request. (Objects: 1)
+2020-04-10 21:58:40.8109 [ERROR] Disconnected: RESET
+2020-04-10 21:58:40.8109 [DEBUG] Disconnect. (Duration: 644)
