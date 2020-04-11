@@ -1,0 +1,27 @@
+2020-04-10 21:07:32.6369 [DEBUG] Validating model...
+2020-04-10 21:07:32.7459 [DEBUG] Model validated
+2020-04-10 21:07:32.7459 [DEBUG] Authenticating with server...
+2020-04-10 21:07:32.9179 [DEBUG] Connected to room. (121821:SceneFusion:SceneFusion)
+2020-04-10 21:07:32.9369 [INFO] Connected to server.
+2020-04-10 21:07:32.9379 [DEBUG] OS : Microsoft Windows NT 10.0.18362.0
+2020-04-10 21:07:32.9379 [DEBUG] Unity Version : 2019.3.4f1
+2020-04-10 21:07:32.9379 [DEBUG] Pro License : False
+2020-04-10 21:07:32.9389 [DEBUG] Platform : WindowsEditor
+2020-04-10 21:07:32.9399 [DEBUG] Build Target : StandaloneWindows64
+2020-04-10 21:07:32.9399 [DEBUG] Scene Fusion version : 1.8.7
+2020-04-10 21:07:32.9399 [DEBUG] Scene Fusion client build : 0
+2020-04-10 21:07:32.9399 [DEBUG] User : bucciarellin16@students.ecu.edu
+2020-04-10 21:07:32.9399 [DEBUG] Waiting for server response
+2020-04-10 21:07:33.0929 [DEBUG] Tier: Indie (4 Seats), Permissions: 00000A02
+2020-04-10 21:07:33.0929 [DEBUG] User Permissions: FFFFFFFF
+2020-04-10 21:07:34.0179 [DEBUG] No stand-in for UnityEngine.MovieTexture
+2020-04-10 21:07:34.0179 [DEBUG] No stand-in for UnityEngine.Experimental.Rendering.RayTracingShader
+2020-04-10 21:07:34.0189 [DEBUG] No stand-in for UnityEngine.LocalizationAsset
+2020-04-10 21:07:34.0189 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2020-04-10 21:07:34.0189 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2020-04-10 21:07:34.0189 [DEBUG] No stand-in for UnityEngine.TerrainLayer
+2020-04-10 21:07:34.0189 [DEBUG] No stand-in for UnityEngine.VFX.VisualEffectAsset
+2020-04-10 21:07:35.0739 [DEBUG] Loading complete
+2020-04-10 21:11:47.1360 [DEBUG] Disconnecting from room (121821:SceneFusion:SceneFusion)
+2020-04-10 21:11:47.1400 [INFO] Disconnected from server.
+2020-04-10 21:11:47.1400 [DEBUG] Disconnect. (Duration: 253)
