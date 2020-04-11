@@ -1,0 +1,31 @@
+2020-04-10 20:49:33.4432 [DEBUG] Validating model...
+2020-04-10 20:49:33.5280 [DEBUG] Model validated
+2020-04-10 20:49:33.5280 [DEBUG] Authenticating with server...
+2020-04-10 20:49:33.9559 [DEBUG] Connected to room. (121821:SceneFusion:SceneFusion)
+2020-04-10 20:49:33.9579 [INFO] Connected to server.
+2020-04-10 20:49:33.9579 [DEBUG] OS : Microsoft Windows NT 10.0.18362.0
+2020-04-10 20:49:33.9579 [DEBUG] Unity Version : 2019.3.4f1
+2020-04-10 20:49:33.9579 [DEBUG] Pro License : False
+2020-04-10 20:49:33.9579 [DEBUG] Platform : WindowsEditor
+2020-04-10 20:49:33.9609 [DEBUG] Build Target : StandaloneWindows
+2020-04-10 20:49:33.9609 [DEBUG] Scene Fusion version : 1.8.7
+2020-04-10 20:49:33.9609 [DEBUG] Scene Fusion client build : 0
+2020-04-10 20:49:33.9609 [DEBUG] User : chris.castro97@gmail.com
+2020-04-10 20:49:33.9609 [DEBUG] Waiting for server response
+2020-04-10 20:49:33.9988 [DEBUG] Tier: Indie (4 Seats), Permissions: 00000A02
+2020-04-10 20:49:33.9988 [DEBUG] User Permissions: FFFFFFFF
+2020-04-10 20:49:33.9998 [DEBUG] No stand-in for UnityEngine.MovieTexture
+2020-04-10 20:49:33.9998 [DEBUG] No stand-in for UnityEngine.Experimental.Rendering.RayTracingShader
+2020-04-10 20:49:33.9998 [DEBUG] No stand-in for UnityEngine.LocalizationAsset
+2020-04-10 20:49:33.9998 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2020-04-10 20:49:33.9998 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2020-04-10 20:49:33.9998 [DEBUG] No stand-in for UnityEngine.TerrainLayer
+2020-04-10 20:49:33.9998 [DEBUG] No stand-in for UnityEngine.VFX.VisualEffectAsset
+2020-04-10 20:49:34.1991 [DEBUG] Uploading scene 'SampleScene'
+2020-04-10 20:49:34.2005 [DEBUG] Spawn request. (Objects: 2)
+2020-04-10 20:49:34.3122 [DEBUG] Loading complete
+2020-04-10 21:07:53.8702 [DEBUG] Spawn request. (Objects: 1)
+2020-04-10 21:13:07.9765 [DEBUG] Disconnecting temporarily to recompile.
+2020-04-10 21:13:07.9765 [DEBUG] Disconnecting from room (121821:SceneFusion:SceneFusion)
+2020-04-10 21:13:07.9925 [INFO] Disconnected from server.
+2020-04-10 21:13:07.9925 [DEBUG] Disconnect. (Duration: 1411)

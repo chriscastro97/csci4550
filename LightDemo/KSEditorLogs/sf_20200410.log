@@ -1,15 +1,4 @@
-2020-04-10 21:26:49.6132 [DEBUG] Scene Fusion version 1.8.7-0
-2020-04-10 21:26:49.6712 [INFO] Setting define symbol SCENE_FUSION
-2020-04-10 21:27:03.9802 [DEBUG] Scene Fusion version 1.8.7-0
-2020-04-10 21:27:09.4024 [DEBUG] Connecting
-2020-04-10 21:27:09.4484 [DEBUG] Connecting to room (121822:SceneFusion:SceneFusion) via TCP at roommanager-ec2-35-164-71-216.kinematicsoup.com:21312
-2020-04-10 21:39:57.1689 [DEBUG] Sent C:/Users/Administrator/Desktop/Unity Games/Gitty/csci4550/LightDemo/KSEditorLogs/SessionLogs/session.121822-637221508295074337.log
-2020-04-10 21:40:52.7500 [DEBUG] Scene Fusion version 1.8.7-0
-2020-04-10 21:40:52.9900 [DEBUG] Play mode: True, sync in play mode: True
-2020-04-10 21:41:03.7527 [DEBUG] Play mode: False
-2020-04-10 21:42:26.3064 [DEBUG] Connecting
-2020-04-10 21:42:26.3584 [DEBUG] Connecting to room (121825:SceneFusion:SceneFusion) via TCP at roommanager-ec2-35-164-71-216.kinematicsoup.com:21312
-2020-04-10 21:58:40.8589 [DEBUG] Sent C:/Users/Administrator/Desktop/Unity Games/Gitty/csci4550/LightDemo/KSEditorLogs/SessionLogs/session.121825-637221517463904187.log
-2020-04-10 22:00:22.4480 [DEBUG] Scene Fusion version 1.8.7-0
-2020-04-10 22:00:22.6790 [DEBUG] Play mode: True, sync in play mode: True
-2020-04-10 22:00:26.0952 [DEBUG] Play mode: False
+2020-04-10 21:15:55.7449 [DEBUG] Scene Fusion version 1.8.7-0
+2020-04-10 21:15:55.7549 [INFO] Setting define symbol SCENE_FUSION
+2020-04-10 21:16:02.6565 [DEBUG] Scene Fusion version 1.8.7-0
+

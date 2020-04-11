@@ -9,14 +9,16 @@
 2020-04-10 20:14:02.5250 [INFO] Launching Session: SampleScene
 2020-04-10 20:14:03.1409 [DEBUG] Connecting
 2020-04-10 20:14:03.1499 [DEBUG] Connecting to room (121813:SceneFusion:SceneFusion) via TCP at roommanager-ec2-35-164-71-216.kinematicsoup.com:21312
-2020-04-10 21:07:08.3753 [DEBUG] Scene Fusion version 1.8.7-0
-2020-04-10 21:07:16.3124 [DEBUG] Invalid token sent as part of a web request token. Token = X6TM7UhPnaO7Z450acXBr6qEzFP86OmN0Ty8YMhp6pO2d1fAGkgduxG443K6XpBYnYsYNR0gymK7dwpottcNk4IsoekADlKdmgPmGQF73TUbmeFR4BjIKnRf8Ko0J8wa4o4fqawr9mZNt4aez87rpmdwNHaNXUKgkUuU4xUKnFUDBGIioTyJDbu8oudPrO4AHLXrgLJzoO5pC57kIP6JBm4bKc5FPenCBo9o8uImb46R06cRc8YAhchTu1UIGbo
-2020-04-10 21:07:32.3074 [DEBUG] Connecting
-2020-04-10 21:07:32.3724 [DEBUG] Connecting to room (121821:SceneFusion:SceneFusion) via TCP at roommanager-ec2-35-164-71-216.kinematicsoup.com:21312
-2020-04-10 21:11:47.2971 [DEBUG] Sent C:/Users/Administrator/Desktop/Unity Games/Gitty/csci4550/titan/KSEditorLogs/SessionLogs/session.121821-637221496524004405.log
-2020-04-10 21:12:06.0772 [DEBUG] Connecting
-2020-04-10 21:12:06.0982 [DEBUG] Connecting to room (121821:SceneFusion:SceneFusion) via TCP at roommanager-ec2-35-164-71-216.kinematicsoup.com:21312
-2020-04-10 21:13:46.2942 [DEBUG] Sent C:/Users/Administrator/Desktop/Unity Games/Gitty/csci4550/titan/KSEditorLogs/SessionLogs/session.121821-637221499260991995.log
-2020-04-10 21:14:00.1512 [DEBUG] Connecting
-2020-04-10 21:14:00.1712 [DEBUG] Connecting to room (121821:SceneFusion:SceneFusion) via TCP at roommanager-ec2-35-164-71-216.kinematicsoup.com:21312
-2020-04-10 21:14:33.6642 [DEBUG] Sent C:/Users/Administrator/Desktop/Unity Games/Gitty/csci4550/titan/KSEditorLogs/SessionLogs/session.121821-637221500401982189.log
+
+2020-04-10 20:42:56.8693 [DEBUG] Scene Fusion version 1.8.7-0
+2020-04-10 20:46:01.9191 [INFO] Launching Session: SampleScene
+2020-04-10 20:46:02.8429 [DEBUG] Connecting
+2020-04-10 20:46:02.8618 [DEBUG] Connecting to room (121819:SceneFusion:SceneFusion) via TCP at roommanager-ec2-35-164-71-216.kinematicsoup.com:21312
+2020-04-10 20:46:09.0637 [DEBUG] Sent C:/Users/Chris/csci4550/titan/KSEditorLogs/SessionLogs/session.121819-637221483629782252.log
+2020-04-10 20:49:12.7234 [INFO] Launching Session: SampleScene
+2020-04-10 20:49:13.3171 [DEBUG] Connecting
+2020-04-10 20:49:13.3270 [DEBUG] Connecting to room (121820:SceneFusion:SceneFusion) via TCP at roommanager-ec2-35-164-71-216.kinematicsoup.com:21312
+2020-04-10 20:49:19.2337 [DEBUG] Sent C:/Users/Chris/csci4550/titan/KSEditorLogs/SessionLogs/session.121820-637221485533980018.log
+2020-04-10 20:49:32.5534 [INFO] Launching Session: SampleScene
+2020-04-10 20:49:33.1739 [DEBUG] Connecting
+2020-04-10 20:49:33.1839 [DEBUG] Connecting to room (121821:SceneFusion:SceneFusion) via TCP at roommanager-ec2-35-164-71-216.kinematicsoup.com:21312
